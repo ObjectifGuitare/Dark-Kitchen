@@ -65,6 +65,8 @@ const menu = [
     },
 ]
 
+const main = document.createElement('main')
+document.body.appendChild(main)
 for (const meal of menu) {
 
 /* Declaring the constants */
@@ -89,7 +91,7 @@ for (const meal of menu) {
         list.appendChild(food);
     }
     
-    document.body.appendChild(figure)
+    main.appendChild(figure)
     figure.appendChild(image)
     figure.appendChild(plate)
     figure.appendChild(drink)
@@ -97,5 +99,8 @@ for (const meal of menu) {
     figure.appendChild(list)
 
 }
+
+
+
 
 
