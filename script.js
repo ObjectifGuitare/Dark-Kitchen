@@ -83,9 +83,10 @@ for (const meal of menu) {
     type.innerHTML = meal.type
     price.innerHTML = meal.price
 
-    for (item of meal.ingredients) {
-        food = document.createElement('li');
-        food.innerText = 
+    for (let item of meal.ingredients) {
+        let food = document.createElement('li');
+        food.innerText = item
+        list.appendChild(food);
     }
     
     document.body.appendChild(figure)
@@ -94,7 +95,6 @@ for (const meal of menu) {
     figure.appendChild(drink)
     figure.appendChild(price)
     figure.appendChild(list)
-    list.appendChild(food)
 
 }
 
