@@ -120,3 +120,10 @@ figure {
 img {
     max-width: 100%;
 }
+
+section
+{
+    background-color: black;
+    padding: 30px;
+    border: 30px black solid;
+}

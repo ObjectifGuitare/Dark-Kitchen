@@ -109,6 +109,7 @@ function displayMenu(){
     }
 }
 
+displayMenu();
 
 
 //switch between dark and light mode
@@ -124,23 +125,49 @@ function displayMenu(){
 //     }
 // }
 
+//dark mode
+// document.querySelector("select").addEventListener("change", darkMode);
+
+
 var cartContent = [];
 
 //event function which adds article to cart and iterates over cartcount
 function addToCart(e)
 {
-    // let cartCount = document.querySelector("#cart").children[0];
-    // cartCount.innerHTML = Number(cartCount.innerHTML) + 1;
-    //^^^or use another global variable to store cart count
+    let cartCount = document.querySelector(".cartCount")
+    console.log(cartCount)
+    cartCount.innerHTML = Number(cartCount.innerHTML) + 1;
+    //e.target.classlist[1] stores the index of the meal in menu
     cartContent.push(e.target.classList[1]);
     console.log(cartContent);
 }
 
 //shows a new page without loading a new one with cart content when clicking on the cart icon
-// function displayCart()
-// {
+function displayCart()
+{
+    if(document.querySelector("main").style.visibility !== "hidden")
+    {
+        document.querySelector("main").style.visibility = "hidden";
+        document.body.insertBefore(document.createElement("section"))
+    }
+}
 
-// }
+
+//cart manager
+
+for (const addable of document.querySelectorAll(".AddToCart"))
+{
+    addable.addEventListener("click", addToCart);
+}
+document.querySelector("#cart").addEventListener("click", displayCart);
+
+
+
+
+
+
+
+
 
 // //display the filtering blocks and the search bar when clicking on "filter"
 function displayFilters(e)
@@ -171,17 +198,11 @@ function displayFilters(e)
 
 // }
 
-displayMenu();
 
-//dark mode
-// document.querySelector("select").addEventListener("change", darkMode);
 
-//cart manager
-for (const addable of document.querySelectorAll(".AddToCart"))
-{
-    addable.addEventListener("click", addToCart);
-}
-// document.querySelector("#cart").addEventListener("click", displayCart);
+
+
+
 
 // //filters
 // document.querySelector("#filterDisplay").addEventListener("click", displayFilters);
