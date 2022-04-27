@@ -109,7 +109,7 @@ figure {
     grid-template-rows: max-content 200px 1fr;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     transition: all .5s cubic-bezier(0.075, 0.82, 0.165, 1);
-    max-width: 100%;
+    max-width: 45%;
     border-radius: 5px;
 }
 
