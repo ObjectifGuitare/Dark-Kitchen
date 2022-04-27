@@ -154,6 +154,7 @@ function displayMenu(arr, tag){
         figure.appendChild(addButton);
         addButton.setAttribute("class", "AddToCart");
         addButton.classList.add(menuIndex);
+        //     span.className = 'glyphicon glyphicon-shopping-cart' ------- add to cart image
         menuIndex++;
     }
 }
@@ -221,20 +222,6 @@ for (const addable of document.querySelectorAll(".AddToCart"))
 document.querySelector("#cart").addEventListener("click", displayCart);
 
 
-// const form = document.createElement("form");
-
-// const button = document.createElement('button')
-// button.textContent = 'search'
-// button.id = 'filter-display'
-
-// document.body.appendChild(form)
-// >>>>>>> jason
-
-
-// form.appendChild(button)
-// const main = document.createElement('main')
-// document.body.appendChild(main)
-
 // //display the different dishes that correspond to the research when searching with search bar
 // function searchMeal()
 // {
@@ -248,24 +235,9 @@ document.querySelector("#cart").addEventListener("click", displayCart);
 // }
 
 
-// for (const meal of menu) {
 
-// /* Declaring the constants */
-//     const figure = document.createElement('figure');
-//     const image = document.createElement('img');
-//     const plate = document.createElement('h2');
-//     const drink = document.createElement('h3');
-//     const type = document.createElement('p');
-//     const price = document.createElement('h4')
-//     const list = document.createElement('ul');
-//     const p = document.createElement('p')
-//     const button = document.createElement('button')
-//     button.className = 'add-to-cart'
-//     const span = document.createElement('span')
-//     span.className = 'glyphicon glyphicon-shopping-cart'
-//     const b = document.createElement('b')
-//     b.innerHTML = 'Add to cart'
-// >>>>>>> jason
+
+   
 
 
 
@@ -274,35 +246,26 @@ document.querySelector("#cart").addEventListener("click", displayCart);
 // //display the filtering blocks and the search bar when clicking on "filter"
 function displayFilters(e)
 {
-    filterDiv = document.querySelector("#filterDiv");
-    dynamicDiv = document.createElement("div");
+    if(!(document.querySelector("input")))
+    {
+        filterDiv = document.querySelector("#filterDiv");
+        dynamicDiv = document.createElement("div");
+        filterDiv.appendChild(dynamicDiv);
 
-    filterDiv.appendChild(dynamicDiv);
-    let filter1 = document.createElement("p");
-    let filter2 = document.create("p");
-    let searchBar = document.createElement("input");
-    searchBar.type = "text";
-    searchBar.placeholder = "Search...";
-    dynamicDiv.appendChild(searchBar);
-    dynamicDiv.appendChild(filter1);
-    dynamicDiv.appendChild(filter2);
-    filter1.setAttribute("class", "healthy");
-    filter2.setAttribute("class", "french");
-    filter1.addEventListener("click", filter());
-    filter2.addEventListener("click", filter());
-    searchBar.addEventListener("keyup", searchMeal())
+        let filter1 = document.createElement("p");
+        let filter2 = document.createElement("p");
+        let searchBar = document.createElement("input");
+        searchBar.type = "text";
+        searchBar.placeholder = "Search...";
+        dynamicDiv.appendChild(searchBar);
+        dynamicDiv.appendChild(filter1);
+        dynamicDiv.appendChild(filter2);
+        filter1.setAttribute("class", "healthy");
+        filter2.setAttribute("class", "french");
+        filter1.addEventListener("click", filter);
+        filter2.addEventListener("click", filter);
+        searchBar.addEventListener("keyup", searchMeal);
+    }
 }
 
-// document.querySelector("#filterDisplay").addEventListener("click", displayFilters);
-
-
-// jason
-// const form = document.createElement("form");
-// const label = document.createElement('label')
-// const input = document.createElement('input')
-// const button = document.createElement('button')
-// label.setAttribute("for", "search")
-// input.setAttribute("type", "text")
-// input.setAttribute("id", "search")
-// button.textContent = 'search'
-
+document.querySelector("#filterSpan").addEventListener("click", displayFilters);
