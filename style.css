@@ -7,7 +7,6 @@
 
 body {
     font-family: cursive;
-    background: linear-gradient(#e66465, #9198e5);
 }
 
 a {
@@ -55,7 +54,17 @@ li {
 }
 
 #cart {
-    max-width: 32px;
+    max-width: 64px;
+}
+
+.cartCount {
+    position: absolute;
+    top: 5px;
+    width: 3px;
+    height: 4px;
+    z-index: 1;
+    font-size: 130%;
+    
 }
 
 /*RESPONSIVE NAVBAR MENU STARTS*/
@@ -111,6 +120,7 @@ figure {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 90px;
+    background: linear-gradient(#e66465, #9198e5);
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     transition: all .5s cubic-bezier(0.075, 0.82, 0.165, 1);
     max-width: 50%;
@@ -129,10 +139,11 @@ p .add-to-cart {
     text-align: right;
 }
 
+#filter-display{
+    margin: 15px;
+}
 
-
-section
-{
+section {
     background-color: black;
     padding: 30px;
     border: 30px black solid;

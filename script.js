@@ -69,7 +69,7 @@ const menu = [
 const form = document.createElement("form");
 
 const button = document.createElement('button')
-button.textContent = 'search'
+button.textContent = 'filter'
 button.id = 'filter-display'
 
 document.body.appendChild(form)
