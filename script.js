@@ -66,16 +66,7 @@ const menu = [
 ]
 
 
-const form = document.createElement("form");
 
-const button = document.createElement('button')
-button.textContent = 'filter'
-button.id = 'filter-display'
-
-document.body.appendChild(form)
-
-
-form.appendChild(button)
 const main = document.createElement('main')
 document.body.appendChild(main)
 
