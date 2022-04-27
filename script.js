@@ -1,5 +1,14 @@
 const menu = [
     {
+        img: '',
+        plate: '',
+        ingredients: ['',''],
+        drink: '',
+        type: '',
+        price: '',
+        diet: '',
+    }
+    {
         plate: 'Juicy Chicken',
         img: '/img/honeyGarlicChicken.jpg',
         ingredients: ['honey', 'garlic'],
