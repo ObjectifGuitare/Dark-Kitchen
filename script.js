@@ -150,25 +150,23 @@ function Choices()
     {
         choices.push(menu[i]);
     }
-    
     return choices;
 }
 
 //shows a new page without loading a new one with cart content when clicking on the cart icon
 function displayCart()
 {
-    if(document.querySelector("main").style.display !== "none")
+    if(document.querySelector("main").style.display !== "none" && cartContent[0])
     {
         document.querySelector("main").style.display = "none";
         document.body.insertBefore(document.createElement("section"), document.querySelector("nav").nextSibling);
         console.log(Choices());
         displayMenu(Choices(), "section");
+        //still need to display price
     }
 }
 
-
 //cart manager
-
 for (const addable of document.querySelectorAll(".AddToCart"))
 {
     addable.addEventListener("click", addToCart);
