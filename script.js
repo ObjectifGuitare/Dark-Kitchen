@@ -64,6 +64,7 @@ const menu = [
         price: 25,
     },
 ]
+<<<<<<< HEAD
 
 let menuIndex = 0;
 
@@ -208,3 +209,27 @@ function displayFilters(e)
 // document.querySelector("#filterDisplay").addEventListener("click", displayFilters);
 // document.querySelector("#search").addEventListener("keyup", searchDishes);
 // document.querySelectorAll("#filterBlock").addEventListener("click", filter);
+
+
+
+
+
+
+
+// jason
+// const form = document.createElement("form");
+// const label = document.createElement('label')
+// const input = document.createElement('input')
+// const button = document.createElement('button')
+// label.setAttribute("for", "search")
+// input.setAttribute("type", "text")
+// input.setAttribute("id", "search")
+// button.textContent = 'search'
+
+// document.body.appendChild(form)
+
+// form.appendChild(label)
+// form.appendChild(input)
+// form.appendChild(button)
+
+
