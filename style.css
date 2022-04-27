@@ -116,3 +116,11 @@ figure {
 img {
     max-width: 100%;
 }
+
+p .add-to-cart {
+    display: block;
+    width: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: right;
+}
