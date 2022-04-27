@@ -65,8 +65,6 @@ const menu = [
     },
 ]
 
-
-
 function displayMenu(arr, tag){
     let menuIndex = 0;
     for (const meal of arr) {
@@ -112,22 +110,24 @@ function displayMenu(arr, tag){
 
 displayMenu(menu, "main");
 
+let isDark = 0;
+function darkMode(e)
+{
+    if(!isDark){
+        document.body.style.backgroundColor = "black";
+        document.body.style.color = "white";
+        isDark = 1;
+        e.target.innerText = "Dark mode";
+    }
+    else {
+        document.body.style.backgroundColor = "white";
+        document.body.style.color = "black";
+        isDark = 0;
+        e.target.innerText = "Light mode";
+    }
+}
 
-//switch between dark and light mode
-// function darkMode(e)
-// {
-//     if(e.target.value === "dark"){
-//         document.body.style.backgroundColor = "black";
-//         document.body.style.color = "white";
-//     }
-//     else {
-//         document.body.style.backgroundColor = "white";
-//         document.body.style.color = "black";
-//     }
-// }
-
-//dark mode
-// document.querySelector("select").addEventListener("change", darkMode);
+document.querySelector(".mode").addEventListener("click", darkMode);
 
 
 var cartContent = [];
@@ -172,9 +172,22 @@ for (const addable of document.querySelectorAll(".AddToCart"))
     addable.addEventListener("click", addToCart);
 }
 document.querySelector("#cart").addEventListener("click", displayCart);
+// =======
 
 
+// const form = document.createElement("form");
 
+// const button = document.createElement('button')
+// button.textContent = 'search'
+// button.id = 'filter-display'
+
+// document.body.appendChild(form)
+// >>>>>>> jason
+
+
+// form.appendChild(button)
+// const main = document.createElement('main')
+// document.body.appendChild(main)
 
 // //display the different dishes that correspond to the research when searching with search bar
 // function searchMeal()
@@ -187,6 +200,27 @@ document.querySelector("#cart").addEventListener("click", displayCart);
 // {
 
 // }
+
+
+// for (const meal of menu) {
+
+// /* Declaring the constants */
+//     const figure = document.createElement('figure');
+//     const image = document.createElement('img');
+//     const plate = document.createElement('h2');
+//     const drink = document.createElement('h3');
+//     const type = document.createElement('p');
+//     const price = document.createElement('h4')
+//     const list = document.createElement('ul');
+//     const p = document.createElement('p')
+//     const button = document.createElement('button')
+//     button.className = 'add-to-cart'
+//     const span = document.createElement('span')
+//     span.className = 'glyphicon glyphicon-shopping-cart'
+//     const b = document.createElement('b')
+//     b.innerHTML = 'Add to cart'
+// >>>>>>> jason
+
 
 
 
@@ -217,10 +251,6 @@ function displayFilters(e)
 
 
 
-
-
-
-
 // jason
 // const form = document.createElement("form");
 // const label = document.createElement('label')
@@ -230,11 +260,3 @@ function displayFilters(e)
 // input.setAttribute("type", "text")
 // input.setAttribute("id", "search")
 // button.textContent = 'search'
-
-// document.body.appendChild(form)
-
-// form.appendChild(label)
-// form.appendChild(input)
-// form.appendChild(button)
-
-
