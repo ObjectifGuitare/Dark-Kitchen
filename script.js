@@ -1,3 +1,5 @@
+let cartContent = [];
+let isDark = 0;
 const menu = [
     {
         plate: 'Juicy Chicken',
@@ -65,6 +67,7 @@ const menu = [
     },
 ]
 
+//displays the given array in the given section
 function displayMenu(arr, tag){
     let menuIndex = 0;
     for (const meal of arr) {
@@ -107,10 +110,9 @@ function displayMenu(arr, tag){
         menuIndex++;
     }
 }
-
 displayMenu(menu, "main");
 
-let isDark = 0;
+
 function darkMode(e)
 {
     if(!isDark){
@@ -126,13 +128,10 @@ function darkMode(e)
         e.target.innerText = "Light mode";
     }
 }
-
 document.querySelector(".mode").addEventListener("click", darkMode);
 
 
-var cartContent = [];
-
-//event function which adds article to cart and iterates over cartcount
+//event function which adds meal index to cartContent and iterates over cartcount
 function addToCart(e)
 {
     let cartCount = document.querySelector(".cartCount")
@@ -143,6 +142,7 @@ function addToCart(e)
     console.log(cartContent);
 }
 
+//array which takes CartContent and transforms it into the actual meal choices
 function Choices()
 {
     let choices = [];
@@ -172,7 +172,6 @@ for (const addable of document.querySelectorAll(".AddToCart"))
     addable.addEventListener("click", addToCart);
 }
 document.querySelector("#cart").addEventListener("click", displayCart);
-// =======
 
 
 // const form = document.createElement("form");
