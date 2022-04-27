@@ -54,6 +54,10 @@ li {
     padding: 5px 14px;
 }
 
+#cart {
+    max-width: 32px;
+}
+
 /*RESPONSIVE NAVBAR MENU STARTS*/
 /* CHECKBOX HACK */
 input[type=checkbox] {
@@ -100,16 +104,20 @@ input[type=checkbox] {
 
 main {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 90px;
+
 }
 
 figure {
     display: grid;
-    grid-template-rows: max-content 200px 1fr;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 90px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     transition: all .5s cubic-bezier(0.075, 0.82, 0.165, 1);
+<<<<<<< HEAD
     max-width: 45%;
+=======
+    max-width: 50%;
+>>>>>>> master
     border-radius: 5px;
 }
 
