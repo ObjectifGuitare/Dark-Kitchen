@@ -92,7 +92,7 @@ function displayMenu(){
             list.appendChild(food);
         }
         
-        document.body.appendChild(figure)
+        document.querySelector("main").appendChild(figure)
         figure.appendChild(image)
         figure.appendChild(plate)
         figure.appendChild(drink)

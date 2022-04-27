@@ -113,11 +113,7 @@ figure {
     gap: 90px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     transition: all .5s cubic-bezier(0.075, 0.82, 0.165, 1);
-<<<<<<< HEAD
-    max-width: 45%;
-=======
     max-width: 50%;
->>>>>>> master
     border-radius: 5px;
 }
 
