@@ -1,7 +1,7 @@
 const menu = [
     {
         plate: 'Juicy Chicken',
-        img: '/img/honeyGarlicChicken.jpg',
+        img: './img/honeyGarlicChicken.jpg',
         ingredients: ['honey', 'garlic'],
         drink: 'White wine',
         type: 'Asian',
@@ -9,7 +9,7 @@ const menu = [
     },
     {
         plate: 'Curry',
-        img: '/img/indianCurry.jpg',
+        img: './img/indianCurry.jpg',
         ingredients: ['rice', 'lamb', 'various spices'],
         drink: 'Milk',
         type: 'Indian',
@@ -17,7 +17,7 @@ const menu = [
     },
     {
         plate: 'Mussels',
-        img: '/img/Mussels.jpg',
+        img: './img/Mussels.jpg',
         ingredients: ['chips', 'cream', 'garlic'],
         drink: 'White wine',
         type: 'Belgian',
@@ -25,7 +25,7 @@ const menu = [
     },
     {
         plate: 'Onion Soup',
-        img: '/img/onionSoup.jpg',
+        img: './img/onionSoup.jpg',
         ingredients: ['onions', 'cream', 'pepper'],
         drink: 'Dark beer',
         type: 'French',
@@ -33,7 +33,7 @@ const menu = [
     },
     {
         plate: 'Picanha Steak',
-        img: '/img/picanha.jpg',
+        img: './img/picanha.jpg',
         ingredients: ['chips', 'manioc', 'butter'],
         drink: 'Red wine',
         type: 'Brazilian',
@@ -41,7 +41,7 @@ const menu = [
     },
     {
         plate: 'Pizza',
-        img: '/img/pizza.jpg',
+        img: './img/pizza.jpg',
         ingredients: ['tomatoes', 'cheese', 'oregano'],
         drink: 'Beer',
         type: 'Italian',
@@ -49,7 +49,7 @@ const menu = [
     },
     {
         plate: 'Quiche Lorraine',
-        img: '/img/quiche.jpg',
+        img: './img/quiche.jpg',
         ingredients: ['eggs', 'broccoli', 'milk'],
         drink: 'Rosé wine',
         type: 'French',
@@ -57,7 +57,7 @@ const menu = [
     },
     {
         plate: 'Tomahawk Steak',
-        img: '/img/tomahawk.jpg',
+        img: './img/tomahawk.jpg',
         ingredients: ['chips', 'parsley', 'butter'],
         drink: 'Red wine',
         type: 'Brazilian',
@@ -65,8 +65,26 @@ const menu = [
     },
 ]
 
+
+const form = document.createElement("form");
+const label = document.createElement('label')
+const input = document.createElement('input')
+const button = document.createElement('button')
+label.setAttribute("for", "search")
+input.setAttribute("type", "text")
+input.setAttribute("id", "search")
+button.textContent = 'search'
+button.id = 'filter-display'
+
+document.body.appendChild(form)
+
+form.appendChild(label)
+form.appendChild(input)
+form.appendChild(button)
 const main = document.createElement('main')
 document.body.appendChild(main)
+
+
 for (const meal of menu) {
 
 /* Declaring the constants */
@@ -77,6 +95,13 @@ for (const meal of menu) {
     const type = document.createElement('p');
     const price = document.createElement('h4')
     const list = document.createElement('ul');
+    const p = document.createElement('p')
+    const button = document.createElement('button')
+    button.className = 'add-to-cart'
+    const span = document.createElement('span')
+    span.className = 'glyphicon glyphicon-shopping-cart'
+    const b = document.createElement('b')
+    b.innerHTML = 'Add to cart'
 
 /* Connecting the correct content to the correct constant */
     image.src = meal.img
@@ -97,7 +122,10 @@ for (const meal of menu) {
     figure.appendChild(drink)
     figure.appendChild(price)
     figure.appendChild(list)
-
+    figure.appendChild(p)
+    p.appendChild(button)
+    button.appendChild(span)
+    button.appendChild(b)
 }
 
 
