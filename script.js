@@ -176,7 +176,17 @@ document.querySelector("#cart").addEventListener("click", displayCart);
 
 
 
+// //display the different dishes that correspond to the research when searching with search bar
+// function searchMeal()
+// {
 
+// }
+
+// //displays the dishes corresponding to the filters
+// function filter()
+// {
+
+// }
 
 
 
@@ -193,33 +203,17 @@ function displayFilters(e)
     let searchBar = document.createElement("input");
     searchBar.type = "text";
     searchBar.placeholder = "Search...";
+    dynamicDiv.appendChild(searchBar);
     dynamicDiv.appendChild(filter1);
     dynamicDiv.appendChild(filter2);
-    dynamicDiv.appendChild(searchBar);
+    filter1.setAttribute("class", "healthy");
+    filter2.setAttribute("class", "french");
+    filter1.addEventListener("click", filter());
+    filter2.addEventListener("click", filter());
+    searchBar.addEventListener("keyup", searchMeal())
 }
 
-// //display the different dishes that correspond to the research when searching with search bar
-// function searchDishes()
-// {
-
-// }
-
-// //displays the dishes corresponding to the filters
-// function filter()
-// {
-
-// }
-
-
-
-
-
-
-
-// //filters
 // document.querySelector("#filterDisplay").addEventListener("click", displayFilters);
-// document.querySelector("#search").addEventListener("keyup", searchDishes);
-// document.querySelectorAll("#filterBlock").addEventListener("click", filter);
 
 
 
