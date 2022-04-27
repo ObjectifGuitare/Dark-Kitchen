@@ -64,12 +64,12 @@ const menu = [
         price: 25,
     },
 ]
-<<<<<<< HEAD
 
-let menuIndex = 0;
 
-function displayMenu(){
-    for (const meal of menu) {
+
+function displayMenu(arr, tag){
+    let menuIndex = 0;
+    for (const meal of arr) {
 
     /* Declaring the constants */
         const figure = document.createElement('figure');
@@ -93,7 +93,7 @@ function displayMenu(){
             list.appendChild(food);
         }
         
-        document.querySelector("main").appendChild(figure)
+        document.querySelector(tag).appendChild(figure)
         figure.appendChild(image)
         figure.appendChild(plate)
         figure.appendChild(drink)
@@ -110,7 +110,7 @@ function displayMenu(){
     }
 }
 
-displayMenu();
+displayMenu(menu, "main");
 
 
 //switch between dark and light mode
@@ -143,13 +143,26 @@ function addToCart(e)
     console.log(cartContent);
 }
 
+function Choices()
+{
+    let choices = [];
+    for (let i of cartContent)
+    {
+        choices.push(menu[i]);
+    }
+    
+    return choices;
+}
+
 //shows a new page without loading a new one with cart content when clicking on the cart icon
 function displayCart()
 {
-    if(document.querySelector("main").style.visibility !== "hidden")
+    if(document.querySelector("main").style.display !== "none")
     {
-        document.querySelector("main").style.visibility = "hidden";
-        document.body.insertBefore(document.createElement("section"))
+        document.querySelector("main").style.display = "none";
+        document.body.insertBefore(document.createElement("section"), document.querySelector("nav").nextSibling);
+        console.log(Choices());
+        displayMenu(Choices(), "section");
     }
 }
 
