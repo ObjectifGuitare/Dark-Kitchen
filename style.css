@@ -7,7 +7,7 @@
 
 body {
     font-family: cursive;
-    /* background: linear-gradient(#e66465, #9198e5); */
+
 }
 
 a {
@@ -54,8 +54,22 @@ li {
     padding: 5px 14px;
 }
 
+/*SHOPPING CART LOGO*/
 #cart {
-    max-width: 32px;
+    max-width: 70px;
+    cursor: pointer;
+}
+
+/*CHIFFRE SHOPPING CART*/
+.cartCount {
+    position: absolute;
+    top: 19px;
+    width: 6px;
+    height: 4px;
+    z-index: 1;
+    font-size: 18px;
+    margin-left: 11px;
+    color: rgb(252, 252, 6);
 }
 
 /*RESPONSIVE NAVBAR MENU STARTS*/
@@ -140,6 +154,11 @@ img {
 
 img {
     max-width: 100%;
+}
+
+figure>h2,
+figure>h3 {
+    text-align: center;
 }
 
 p .add-to-cart {

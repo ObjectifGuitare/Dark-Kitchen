@@ -219,6 +219,8 @@ function Choices()
 function displayCart()
 {
     if((document.querySelector("main").style.display !== "none" || document.querySelector(".filteredSection")) && cartContent[0])
+
+      
     {
         document.querySelector("main").style.display = "none";
         if (document.querySelector(".filteredSection"))
