@@ -142,10 +142,10 @@ function displayMenu(arr, tag, isCart){
     /* Connecting the correct content to the correct constant */
         image.src = meal.img
         plate.innerHTML = meal.plate
-        drink.innerHTML = meal.drink
-        type.innerHTML = meal.type
+        drink.innerHTML = `This meal pairs well with ${meal.drink}`
+        type.innerHTML = `Dietary content: ${meal.type}`
         price.innerHTML = `${meal.price}€`
-        diet.innerHTML = meal.diet
+        diet.innerHTML = `Add ${meal.diet} meal to cart`
 
         for (let item of meal.ingredients) {
             let food = document.createElement('li');
@@ -156,9 +156,9 @@ function displayMenu(arr, tag, isCart){
         document.querySelector(tag).appendChild(figure)
         figure.appendChild(image)
         figure.appendChild(plate)
+        figure.appendChild(type)
         figure.appendChild(drink)
         figure.appendChild(price)
-        figure.appendChild(diet)
         figure.appendChild(list)
 
 
@@ -166,7 +166,7 @@ function displayMenu(arr, tag, isCart){
         //adding a "add to cart" button
         if (!isCart){
             let addButton = document.createElement("div");
-            addButton.innerHTML = "Add to Cart";
+            addButton.innerHTML = `Add ${meal.diet} meal to your cart`;
             figure.appendChild(addButton);
             addButton.setAttribute("class", "AddToCart");
             addButton.classList.add(meal.index);
