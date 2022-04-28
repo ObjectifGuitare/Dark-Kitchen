@@ -125,10 +125,10 @@ const list = document.createElement('ul');
 /* Connecting the correct content to the correct constant */
     image.src = meal.img
     plate.innerHTML = meal.plate
-    drink.innerHTML = meal.drink
-    type.innerHTML = meal.type
-    price.innerHTML = meal.price
-    diet.innerHTML = meal.diet
+    drink.innerHTML = `This meal pairs well with ${meal.drink}`
+    type.innerHTML = `Dietary content: ${meal.type}`
+    price.innerHTML = `${meal.price}€`
+    diet.innerHTML = `Add ${meal.diet} meal to cart`
 
     for (let item of meal.ingredients) {
         let food = document.createElement('li');
@@ -139,11 +139,12 @@ const list = document.createElement('ul');
     main.appendChild(figure)
     figure.appendChild(image)
     figure.appendChild(plate)
-    figure.appendChild(price)
     figure.appendChild(type)
     figure.appendChild(drink)
-    figure.appendChild(diet)
+    figure.appendChild(price)
     figure.appendChild(list)
+    figure.appendChild(diet)
+
 }
 
 
