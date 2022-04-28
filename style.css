@@ -52,19 +52,21 @@ li {
 .menu li {
     padding: 5px 14px;
 }
-
+/*SHOPPING CART LOGO*/
 #cart {
-    max-width: 64px;
+    max-width: 70px;
+    cursor: pointer;
 }
-
+/*CHIFFRE SHOPPING CART*/
 .cartCount {
     position: absolute;
-    top: 5px;
-    width: 3px;
+    top: 19px;
+    width: 6px;
     height: 4px;
     z-index: 1;
-    font-size: 130%;
-    
+    font-size: 18px;
+    margin-left: 11px;
+    color: rgb(252, 252, 6);
 }
 
 /*RESPONSIVE NAVBAR MENU STARTS*/
@@ -113,15 +115,14 @@ input[type=checkbox] {
 
 main {
     display: grid;
-
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 90px;
 }
 
 figure {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 90px;
     background: linear-gradient(#e66465, #9198e5);
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 8px 0 rgba(183, 179, 179, 0.2);
     transition: all .5s cubic-bezier(0.075, 0.82, 0.165, 1);
     max-width: 50%;
     border-radius: 5px;
