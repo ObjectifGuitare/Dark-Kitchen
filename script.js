@@ -6,7 +6,7 @@ const menu = [
         img: 'images/loadedNachos.jpg',
         plate: 'Loaded Nachos',
         ingredients: ['nachos','guacamole', 'salsa', 'cheese'],
-        drink: 'beer',
+        drink: 'Beer',
         type: 'Chicken-meal',
         price:17.50,
         index: 0,
@@ -218,12 +218,13 @@ function Choices()
 //shows a new page without loading a new one with cart content when clicking on the cart icon
 function displayCart()
 {
-    console.log("OSUDBVOZEVOUVZ")
-    console.log(cartContent[0])
-    console.log(document.querySelector("main").style.display !== "none")
-    if((document.querySelector("main").style.display !== "none") && cartContent[0])
+    if((document.querySelector("main").style.display !== "none" || document.querySelector(".filteredSection")) && cartContent[0])
+
+      
     {
         document.querySelector("main").style.display = "none";
+        if (document.querySelector(".filteredSection"))
+            document.querySelector(".filteredSection").remove();
         document.body.insertBefore(document.createElement("section"), document.querySelector("nav").nextSibling);
         displayMenu(Choices(), "section");
         //still need to display price
@@ -235,16 +236,17 @@ document.querySelector("#cart").addEventListener("click", displayCart);
 // //display the different dishes that correspond to the research when searching with search bar
 // function searchMeal()
 // {
-
 // }
 
 //displays the dishes corresponding to the filters
 function filter(e)
 {
     let filteredMenu = [];
-
+    let section = document.createElement("section");
     document.querySelector("main").style.display = "none";
-    document.body.insertBefore(document.createElement("section"), document.querySelector("nav").nextSibling);
+    document.body.insertBefore(section, document.querySelector("nav").nextSibling);
+    section.setAttribute("class", "filteredSection");
+
     for (const dish of menu) {
         // console.log(e.target.className)
         if(dish.diet === e.target.className || dish.type === e.target.className)
