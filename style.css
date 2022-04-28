@@ -8,6 +8,11 @@
     box-sizing: border-box;
 }
 
+body {
+    font-family: cursive;
+
+}
+
 a {
     text-decoration: none;
 }
@@ -52,8 +57,24 @@ li {
     padding: 5px 14px;
 }
 
-#cart {
-    max-width: 32px;
+/*SHOPPING CART LOGO*/
+img#cart {
+    height:auto;
+    width:70px;
+    border-radius:0%;
+    padding: 10px;
+}
+
+/*CHIFFRE SHOPPING CART*/
+.cartCount {
+    position: absolute;
+    top: 19px;
+    width: 6px;
+    height: 4px;
+    z-index: 1;
+    font-size: 18px;
+    margin-left: 11px;
+    color: rgb(252, 252, 6);
 }
 
 /*RESPONSIVE NAVBAR MENU STARTS*/
@@ -100,11 +121,22 @@ input[type=checkbox] {
     }
 }
 
-main {
+div#card-container {
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
     align-items: center;
+}
+
+div#filterDiv {
+    width: 50%;
+    text-align: center;
+    text-decoration: double;
+    padding: 10px;
+    font-family: 'Baloo 2', cursive;
+    border-radius:25px;
+    background-color:#008080;
+    margin: 10px auto;
 }
 
 figure {
@@ -115,7 +147,7 @@ figure {
     color:	#B6DADA;
     align-items: center;
     width: 30%;
-    height:max-content;
+    height:25%;
     padding: 10px;
     margin: 10px;
     border-radius: 25px;
@@ -134,10 +166,10 @@ h2 {
 }
 
 h3, p {
-    font-size: small;
+    font-size: smaller;
     font-family: 'Baloo 2', cursive;
-    width:40%;
-    background-color: #008080;
+    width:45%;
+    border:solid 4px #008080;
     border-radius:25px;
     padding: 10px;
     text-align: center;
@@ -147,19 +179,29 @@ h3, p {
 h4 {
     width: 100%;
     font-weight: bolder;
-    font-size: large;
+    font-size: xx-large;
     text-align: right;
     text-align: center;
 }
 
-h5 {
+.AddToCart {
     font-weight:900;
     color:#008080;
     background-color: #B6DADA;
     padding: 10px;
     border-radius: 5px;
     text-align:center;
-    width:75%;
+    width:90%;
+    margin:10px;
+}
+
+.AddToCart:hover {
+    color:#B6DADA;
+    background-color: #008080;
+}
+
+.AddToCart:active {
+    text-decoration: underline;
 }
 
 ul {
@@ -170,11 +212,13 @@ ul {
 }
 
 li {
+    font-size: smaller;
     padding: 10px;
     background-color:#008080;
     border-radius:25px;
     margin: 5px;
     font-family: 'Baloo 2', cursive;
+    
 }
 
 #cart {
@@ -186,4 +230,21 @@ img {
     width: 100%;
     height: 200px;
     border-radius: 25px;
+}
+
+
+img {
+    max-width: 100%;
+}
+
+figure>h2,
+figure>h3 {
+    text-align: center;
+}
+
+p .add-to-cart {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
 }

@@ -1,3 +1,6 @@
+let cartContent = [];
+let isFilterDisplayed = 0;
+let isDark = 0;
 const menu = [
     {
         img: 'images/loadedNachos.jpg',
@@ -6,6 +9,7 @@ const menu = [
         drink: 'Beer',
         type: 'Chicken-meal',
         price:17.50,
+        index: 0,
         diet: 'Fast-food',
     },
     {
@@ -15,6 +19,7 @@ const menu = [
         drink: 'White wine',
         type: 'Seafood',
         price: 21.50,
+        index: 1,
         diet: 'Luxury',
     },
     {
@@ -24,6 +29,7 @@ const menu = [
         drink: 'White wine',
         type: 'Seafood',
         price: 23.50,
+        index: 2,
         diet: 'Luxury',
     },
     {
@@ -33,6 +39,7 @@ const menu = [
         drink: 'Red wine',
         type: 'Vegetarian',
         price:11.50 ,     
+        index: 3,
         diet: 'Comfort',
     },
     {
@@ -42,6 +49,7 @@ const menu = [
         drink: 'Beer',
         type: 'Red meat',
         price: 19.50,
+        index: 4,
         diet: 'Comfort',
     },
     {
@@ -51,6 +59,7 @@ const menu = [
         drink: 'White wine',
         type: 'Red meat',
         price: 26.50,
+        index: 5,
         diet: 'Luxury',
     },
     {
@@ -60,6 +69,7 @@ const menu = [
         drink: 'Soda',
         type: 'Vegetarian',
         price: 12,
+        index: 6,
         diet: 'Fast-food',
     },
     {
@@ -69,6 +79,7 @@ const menu = [
         drink: 'Rose wine',
         type: 'Seafood',
         price: 15,
+        index: 7,
         diet: 'Healthy',
     },
     {
@@ -78,6 +89,7 @@ const menu = [
         drink: 'White wine',
         type: 'Chicken-meal',
         price: 14.50,
+        index: 8,
         diet: 'Healthy',
     },
     {
@@ -87,6 +99,7 @@ const menu = [
         drink: 'Red wine',
         type: 'Red meat',
         price: 15.50,
+        index: 9,
         diet: 'Comfort',
     },
     {
@@ -96,6 +109,7 @@ const menu = [
         drink: 'Red wine',
         type: 'Red meat',
         price: 31.5,
+        index: 10,
         diet: 'Luxury',
     },
     {
@@ -105,48 +119,199 @@ const menu = [
         drink: 'Beer',
         type: 'Seafood',
         price: 16,
+        index: 11,
         diet: 'Comfort',
     }
 ]
 
-for (let meal of menu) {
+//displays the given array in the given section
+function displayMenu(arr, tag){
+    // let menuIndex = 0;
+    for (const meal of arr) {
 
-/* Declaring the constants */
-const main = document.querySelector('main');
-const figure = document.createElement('figure');
-const image = document.createElement('img');
-const plate = document.createElement('h2');
-const drink = document.createElement('h3');
-const type = document.createElement('p');
-const price = document.createElement('h4');
-const diet = document.createElement('h5');
-const list = document.createElement('ul');
+    /* Declaring the constants */
+        const figure = document.createElement('figure');
+        const image = document.createElement('img');
+        const plate = document.createElement('h2');
+        const drink = document.createElement('h3');
+        const type = document.createElement('p');
+        const price = document.createElement('h4');
+        const diet = document.createElement('h5');
+        const list = document.createElement('ul');
 
-/* Connecting the correct content to the correct constant */
-    image.src = meal.img
-    plate.innerHTML = meal.plate
-    drink.innerHTML = `This meal pairs well with ${meal.drink}`
-    type.innerHTML = `Dietary content: ${meal.type}`
-    price.innerHTML = `${meal.price}€`
-    diet.innerHTML = `Add ${meal.diet} meal to cart`
+    /* Connecting the correct content to the correct constant */
+        image.src = meal.img
+        plate.innerHTML = meal.plate
+        drink.innerHTML = `This meal pairs well with ${meal.drink}`
+        type.innerHTML = `Dietary content: ${meal.type}`
+        price.innerHTML = `${meal.price}€`
+        diet.innerHTML = `Add ${meal.diet} meal to cart`
 
-    for (let item of meal.ingredients) {
-        let food = document.createElement('li');
-        food.innerText = item
-        list.appendChild(food);
+        for (let item of meal.ingredients) {
+            let food = document.createElement('li');
+            food.innerText = item
+            list.appendChild(food);
+        }
+        
+        document.querySelector(tag).appendChild(figure)
+        figure.appendChild(image)
+        figure.appendChild(plate)
+        figure.appendChild(type)
+        figure.appendChild(drink)
+        figure.appendChild(price)
+        figure.appendChild(list)
+
+
+
+        //adding a "add to cart" button
+        let addButton = document.createElement("div");
+        addButton.innerHTML = `Add ${meal.diet} meal to your cart`;
+        figure.appendChild(addButton);
+        addButton.setAttribute("class", "AddToCart");
+        addButton.classList.add(meal.index);
+        addButton.addEventListener("click", addToCart);
+        //     span.className = 'glyphicon glyphicon-shopping-cart' ------- add to cart image
+        // menuIndex++;
     }
+}
+displayMenu(menu, "#card-container");
 
-    main.appendChild(figure)
-    figure.appendChild(image)
-    figure.appendChild(plate)
-    figure.appendChild(type)
-    figure.appendChild(drink)
-    figure.appendChild(price)
-    figure.appendChild(list)
-    figure.appendChild(diet)
 
+function darkMode(e)
+{
+    if(!isDark){
+        document.body.style.backgroundColor = "black";
+        document.body.style.color = "white";
+        isDark = 1;
+        e.target.innerText = "Dark mode";
+        e.target.style.backgroundColor = "black";
+        e.target.style.color = "white";
+        // document.body.style.filter = 'invert(1)'
+    }
+    else {
+        document.body.style.backgroundColor = "white";
+        document.body.style.color = "black";
+        isDark = 0;
+        e.target.innerText = "Light mode";
+        e.target.style.backgroundColor = "white";
+        e.target.style.color = "black";
+        // document.body.style.filter = 'invert(0)'
+    }
+}
+document.querySelector(".mode").addEventListener("click", darkMode);
+
+
+//event function which adds meal index to cartContent and iterates over cartcount
+function addToCart(e)
+{
+    let cartCount = document.querySelector(".cartCount")
+    console.log(cartCount)
+    cartCount.innerHTML = Number(cartCount.innerHTML) + 1;
+    //e.target.classlist[1] stores the index of the meal in menu
+    cartContent.push(e.target.classList[1]);
+    console.log(cartContent);
 }
 
+//array which takes CartContent and transforms it into the actual meal choices
+function Choices()
+{
+    let choices = [];
+    for (let i of cartContent)
+    {
+        choices.push(menu[i]);
+    }
+    return choices;
+}
+
+//shows a new page without loading a new one with cart content when clicking on the cart icon
+function displayCart()
+{
+    if((document.querySelector("main").style.display !== "none" || document.querySelector(".filteredSection")) && cartContent[0])
+    {
+        document.querySelector("main").style.display = "none";
+        if (document.querySelector(".filteredSection"))
+            document.querySelector(".filteredSection").remove();
+        document.body.insertBefore(document.createElement("section"), document.querySelector("nav").nextSibling);
+        displayMenu(Choices(), "section");
+        //still need to display price
+    }
+}
+document.querySelector("#cart").addEventListener("click", displayCart);
+
+
+// //display the different dishes that correspond to the research when searching with search bar
+// function searchMeal()
+// {
+// }
+
+//displays the dishes corresponding to the filters
+function filter(e)
+{
+    let filteredMenu = [];
+    let section = document.createElement("section");
+    document.querySelector("main").style.display = "none";
+    document.body.insertBefore(section, document.querySelector("nav").nextSibling);
+    section.setAttribute("class", "filteredSection");
+
+    for (const dish of menu) {
+        // console.log(e.target.className)
+        if(dish.diet === e.target.className || dish.type === e.target.className)
+        {
+            // e.target.classList stores the filter value
+            filteredMenu.push(dish);
+            console.log("bonjour")
+    
+        }
+    }
+        console.log(filteredMenu)
+        displayMenu(filteredMenu, "section");
+}
+
+// //display the filtering blocks and the search bar when clicking on "filter"
+function displayFilters(e)
+{
+    if(!isFilterDisplayed)
+    {
+        isFilterDisplayed = 1;
+        filterDiv = document.querySelector("#filterDiv");
+        dynamicDiv = document.createElement("div");
+        filterDiv.appendChild(dynamicDiv);
+
+        let filter1 = document.createElement("p");
+        let filter2 = document.createElement("p");
+        let searchBar = document.createElement("input");
+        searchBar.type = "text";
+        searchBar.placeholder = "Search meal name";
+        dynamicDiv.appendChild(searchBar);
+        dynamicDiv.appendChild(filter1);
+        dynamicDiv.appendChild(filter2);
+        filter1.setAttribute("class", "Comfort");
+        filter2.setAttribute("class", "Vegetarian");
+        filter1.innerHTML = "Comfort";
+        filter2.innerHTML = "Vegetarian";
+        filter1.addEventListener("click", filter);
+        filter2.addEventListener("click", filter);
+        // searchBar.addEventListener("keyup", searchMeal);
+    }
+}
+
+document.querySelector("#filterSpan").addEventListener("click", displayFilters);
 
 
 
+//both of these events make the switch between cart and main menu possible
+document.querySelector(".logo").addEventListener("click", function(e){
+    if (document.querySelector("section"))
+    {
+        document.querySelector("section").remove();
+        document.querySelector("main").style.display = "flex";
+    }
+})
+
+document.querySelector(".home").addEventListener("click", function(e){
+    if (document.querySelector("section"))
+    {
+        document.querySelector("section").remove();
+        document.querySelector("main").style.display = "flex";
+    }
+})

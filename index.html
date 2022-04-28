@@ -10,44 +10,40 @@
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Karma">
     <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>
+
 </head>
 
 <body>
     <!-- Top menu -->
-        <nav class="navbar">
-            <!-- LOGO -->
-            <div class="logo">FOOOD</div>
-            <!-- NAVIGATION MENU -->
-            <ul class="nav-links">
-                <!-- USING CHECKBOX HACK -->
-                <input type="checkbox" id="checkbox_toggle" />
-                <label for="checkbox_toggle" class="hamburger">&#9776;</label>
-                <!-- NAVIGATION MENUS -->
-                <div class="menu">
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">services</a></li>
-                    <li><a href="#"><img src="images/cart.png" alt="cart" id="cart"></a></li>
-                    <li><a href="#">Contact</a></li>
-                </div>
-            </ul>
-        </nav>
+    <nav class="navbar">
+        <!-- LOGO -->
+        <div class="logo">FOOOD</div>
+        <!-- NAVIGATION MENU -->
+        <ul class="nav-links">
+            <!-- USING CHECKBOX HACK -->
+            <input type="checkbox" id="checkbox_toggle" />
+            <label for="checkbox_toggle" class="hamburger">&#9776;</label>
+            <!-- NAVIGATION MENUS -->
+            <div class="menu">
+                <li><button class="mode">light mode</button></li>
+                <li><a href="#" class="home">Home</a></li>
+                <li><a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">About</a></li>
+                <li><a href="#">services</a></li>
+                <li id="cart">
+                   <img src="images/clipart.png" alt="cart" id="cart">
+                    <p class="cartCount">0</p>
+                </li>
+                <li><a href="#">Contact</a></li>
+            </div>
+        </ul>
+    </nav>
+    <main>
+        <div id="filterDiv"><span id="filterSpan">Filter</span></div>
+        <div id="card-container">
 
-        <main>
-
-
-
-
-
-
-
-
-
-        </main>
-    
-
+        </div>
+        
+    </main>
 </body>
-
 </html>
-
-<script src="script.js"></script>
