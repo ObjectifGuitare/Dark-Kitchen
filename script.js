@@ -223,6 +223,15 @@ function Choices()
     return choices;
 }
 
+function paySum(arr)
+{
+    let sum = 0;
+    for (const machin of arr) {
+        sum += machin.price;
+    }
+    return sum;
+}
+
 //shows a new page without loading a new one with cart content when clicking on the cart icon
 function displayCart()
 {
@@ -232,8 +241,14 @@ function displayCart()
         if (document.querySelector(".filteredSection"))
             document.querySelector(".filteredSection").remove();
         document.body.insertBefore(document.createElement("section"), document.querySelector("nav").nextSibling);
-        displayMenu(Choices(), "section");
+        let payPLEASE = Choices(); 
+        displayMenu(payPLEASE, "section");
+
         //still need to display price
+        let price = document.createElement("div")
+        price.classList.add("price")
+        document.body.querySelector("section").appendChild(price);
+        price.innerHTML = `paie ${paySum(payPLEASE)}€ stp mec ou meuf`;
     }
 }
 document.querySelector("#cart").addEventListener("click", displayCart);
