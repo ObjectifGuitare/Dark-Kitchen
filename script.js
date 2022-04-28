@@ -182,12 +182,14 @@ function darkMode(e)
         document.body.style.color = "white";
         isDark = 1;
         e.target.innerText = "Dark mode";
+        // document.body.style.filter = 'invert(1)'
     }
     else {
         document.body.style.backgroundColor = "white";
         document.body.style.color = "black";
         isDark = 0;
         e.target.innerText = "Light mode";
+        // document.body.style.filter = 'invert(0)'
     }
 }
 document.querySelector(".mode").addEventListener("click", darkMode);
