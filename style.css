@@ -5,9 +5,12 @@
     box-sizing: border-box;
 }
 
+
 body {
     font-family: cursive;
+
 }
+
 
 a {
     text-decoration: none;
@@ -52,11 +55,13 @@ li {
 .menu li {
     padding: 5px 14px;
 }
+
 /*SHOPPING CART LOGO*/
 #cart {
     max-width: 70px;
     cursor: pointer;
 }
+
 /*CHIFFRE SHOPPING CART*/
 .cartCount {
     position: absolute;
@@ -132,7 +137,8 @@ img {
     max-width: 100%;
 }
 
-figure>h2, figure>h3 {
+figure>h2,
+figure>h3 {
     text-align: center;
 }
 
@@ -144,7 +150,8 @@ p .add-to-cart {
     text-align: right;
 }
 
-#filter-display{
+
+#filter-display {
     margin: 15px;
 }
 
