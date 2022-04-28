@@ -139,8 +139,9 @@ const list = document.createElement('ul');
     main.appendChild(figure)
     figure.appendChild(image)
     figure.appendChild(plate)
-    figure.appendChild(drink)
     figure.appendChild(price)
+    figure.appendChild(type)
+    figure.appendChild(drink)
     figure.appendChild(diet)
     figure.appendChild(list)
 }
