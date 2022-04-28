@@ -38,6 +38,7 @@ li {
 /* LOGO */
 .logo {
     font-size: 32px;
+    cursor: pointer;
 }
 
 /* NAVBAR MENU */
@@ -73,7 +74,7 @@ img#cart {
     height: 4px;
     z-index: 1;
     font-size: 18px;
-    margin-left: 11px;
+    margin-left: 10px;
     color: rgb(252, 252, 6);
 }
 
@@ -121,6 +122,10 @@ input[type=checkbox] {
     }
 }
 
+.mode {
+    cursor: pointer;
+}
+
 div#card-container {
     display: flex;
     flex-flow: row wrap;
@@ -128,6 +133,20 @@ div#card-container {
     align-items: center;
 }
 
+main {
+     display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+}
+  
+
+section {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+}
 div#filterDiv {
     width: 50%;
     text-align: center;
@@ -155,6 +174,11 @@ figure {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 
+figure>img {
+    align-items: first baseline;
+}
+  
+  
 h2 {
     width: 100%;
     text-align: center;
@@ -232,19 +256,37 @@ img {
     border-radius: 25px;
 }
 
-
 img {
     max-width: 100%;
 }
 
-figure>h2,
-figure>h3 {
+figure>h2, figure>h3 {
     text-align: center;
 }
 
-p .add-to-cart {
+.AddToCart {
     display: block;
-    margin-left: auto;
-    margin-right: auto;
+    cursor: pointer;
+    background-color: #965675;
+    border: 1px solid;
+    margin-top: 5px;
+    padding: 10px;
     text-align: center;
+}
+
+.AddToCart:hover, #filterDiv:hover {
+    background-color: grey;
+    color: #fff;
+}
+
+#filterDiv {
+    cursor: pointer;
+    background-color: #965675;
+    border: 1px solid;
+    padding: 10px;
+}
+
+.Comfort:hover, .Vegetarian:hover {
+    cursor: pointer;
+    background-color: black;
 }
