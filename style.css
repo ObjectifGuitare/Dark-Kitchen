@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@700&display=swap');
+
+
 /* UTILITIES */
 * {
     margin: 0;
@@ -56,9 +59,11 @@ li {
 }
 
 /*SHOPPING CART LOGO*/
-#cart {
-    max-width: 70px;
-    cursor: pointer;
+img#cart {
+    height:auto;
+    width:70px;
+    border-radius:0%;
+    padding: 10px;
 }
 
 /*CHIFFRE SHOPPING CART*/
@@ -121,12 +126,20 @@ input[type=checkbox] {
     cursor: pointer;
 }
 
-main {
+div#card-container {
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
     align-items: center;
 }
+
+main {
+     display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+}
+  
 
 section {
     display: flex;
@@ -134,18 +147,28 @@ section {
     justify-content: center;
     align-items: center;
 }
+div#filterDiv {
+    width: 50%;
+    text-align: center;
+    text-decoration: double;
+    padding: 10px;
+    font-family: 'Baloo 2', cursive;
+    border-radius:25px;
+    background-color:#008080;
+    margin: 10px auto;
+}
 
 figure {
     display: flex;
-    flex-flow: column nowrap;
+    flex-flow: row wrap;
     justify-content: center;
     background-color:#239C7B;
     color:	#B6DADA;
     align-items: center;
     width: 30%;
-    height:max-content;
+    height:25%;
     padding: 10px;
-    margin: 5px;
+    margin: 10px;
     border-radius: 25px;
     border: solid 5px #008080;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
@@ -153,6 +176,81 @@ figure {
 
 figure>img {
     align-items: first baseline;
+}
+  
+  
+h2 {
+    width: 100%;
+    text-align: center;
+    text-decoration: double;
+    padding: 10px;
+    font-family: 'Baloo 2', cursive;
+    border-radius:25px;
+    background-color:#008080;
+}
+
+h3, p {
+    font-size: smaller;
+    font-family: 'Baloo 2', cursive;
+    width:45%;
+    border:solid 4px #008080;
+    border-radius:25px;
+    padding: 10px;
+    text-align: center;
+    margin: 5px;
+}
+
+h4 {
+    width: 100%;
+    font-weight: bolder;
+    font-size: xx-large;
+    text-align: right;
+    text-align: center;
+}
+
+.AddToCart {
+    font-weight:900;
+    color:#008080;
+    background-color: #B6DADA;
+    padding: 10px;
+    border-radius: 5px;
+    text-align:center;
+    width:90%;
+    margin:10px;
+}
+
+.AddToCart:hover {
+    color:#B6DADA;
+    background-color: #008080;
+}
+
+.AddToCart:active {
+    text-decoration: underline;
+}
+
+ul {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+li {
+    font-size: smaller;
+    padding: 10px;
+    background-color:#008080;
+    border-radius:25px;
+    margin: 5px;
+    font-family: 'Baloo 2', cursive;
+    
+}
+
+#cart {
+    width: auto;
+    height: auto;
+}
+
+img {
     width: 100%;
     height: 200px;
     border-radius: 25px;
@@ -162,8 +260,7 @@ img {
     max-width: 100%;
 }
 
-figure>h2,
-figure>h3 {
+figure>h2, figure>h3 {
     text-align: center;
 }
 
