@@ -1,4 +1,5 @@
 let cartContent = [];
+let isFilterDisplayed = 0;
 let isDark = 0;
 const menu = [
     {
@@ -8,6 +9,7 @@ const menu = [
         drink: 'beer',
         type: 'Chicken-meal',
         price:17.50,
+        index: 0,
         diet: 'Fast-food',
     },
     {
@@ -17,6 +19,7 @@ const menu = [
         drink: 'White wine',
         type: 'Seafood',
         price: 21.50,
+        index: 1,
         diet: 'Luxury',
     },
     {
@@ -26,6 +29,7 @@ const menu = [
         drink: 'White wine',
         type: 'Seafood',
         price: 23.50,
+        index: 2,
         diet: 'Luxury',
     },
     {
@@ -35,6 +39,7 @@ const menu = [
         drink: 'Red wine',
         type: 'Vegetarian',
         price:11.50 ,     
+        index: 3,
         diet: 'Comfort',
     },
     {
@@ -44,6 +49,7 @@ const menu = [
         drink: 'Beer',
         type: 'Red meat',
         price: 19.50,
+        index: 4,
         diet: 'Comfort',
     },
     {
@@ -53,6 +59,7 @@ const menu = [
         drink: 'White wine',
         type: 'Red meat',
         price: 26.50,
+        index: 5,
         diet: 'Luxury',
     },
     {
@@ -62,6 +69,7 @@ const menu = [
         drink: 'Soda',
         type: 'Vegetarian',
         price: 12,
+        index: 6,
         diet: 'Fast-food',
     },
     {
@@ -71,6 +79,7 @@ const menu = [
         drink: 'Rose wine',
         type: 'Seafood',
         price: 15,
+        index: 7,
         diet: 'Healthy',
     },
     {
@@ -80,6 +89,7 @@ const menu = [
         drink: 'White wine',
         type: 'Chicken-meal',
         price: 14.50,
+        index: 8,
         diet: 'Healthy',
     },
     {
@@ -89,6 +99,7 @@ const menu = [
         drink: 'Red wine',
         type: 'Red meat',
         price: 15.50,
+        index: 9,
         diet: 'Comfort',
     },
     {
@@ -98,6 +109,7 @@ const menu = [
         drink: 'Red wine',
         type: 'Red meat',
         price: 31.5,
+        index: 10,
         diet: 'Luxury',
     },
     {
@@ -107,13 +119,14 @@ const menu = [
         drink: 'Beer',
         type: 'Seafood',
         price: 16,
+        index: 11,
         diet: 'Comfort',
     }
 ]
 
 //displays the given array in the given section
 function displayMenu(arr, tag){
-    let menuIndex = 0;
+    // let menuIndex = 0;
     for (const meal of arr) {
 
     /* Declaring the constants */
@@ -131,7 +144,7 @@ function displayMenu(arr, tag){
         plate.innerHTML = meal.plate
         drink.innerHTML = meal.drink
         type.innerHTML = meal.type
-        price.innerHTML = meal.price
+        price.innerHTML = `${meal.price}€`
         diet.innerHTML = meal.diet
 
         for (let item of meal.ingredients) {
@@ -153,9 +166,10 @@ function displayMenu(arr, tag){
         addButton.innerHTML = "Add to Cart";
         figure.appendChild(addButton);
         addButton.setAttribute("class", "AddToCart");
-        addButton.classList.add(menuIndex);
+        addButton.classList.add(meal.index);
+        addButton.addEventListener("click", addToCart);
         //     span.className = 'glyphicon glyphicon-shopping-cart' ------- add to cart image
-        menuIndex++;
+        // menuIndex++;
     }
 }
 displayMenu(menu, "main");
@@ -204,20 +218,16 @@ function Choices()
 //shows a new page without loading a new one with cart content when clicking on the cart icon
 function displayCart()
 {
-    if(document.querySelector("main").style.display !== "none" && cartContent[0])
+    console.log("OSUDBVOZEVOUVZ")
+    console.log(cartContent[0])
+    console.log(document.querySelector("main").style.display !== "none")
+    if((document.querySelector("main").style.display !== "none" || ) && cartContent[0])
     {
         document.querySelector("main").style.display = "none";
         document.body.insertBefore(document.createElement("section"), document.querySelector("nav").nextSibling);
-        console.log(Choices());
         displayMenu(Choices(), "section");
         //still need to display price
     }
-}
-
-//cart manager
-for (const addable of document.querySelectorAll(".AddToCart"))
-{
-    addable.addEventListener("click", addToCart);
 }
 document.querySelector("#cart").addEventListener("click", displayCart);
 
@@ -228,11 +238,26 @@ document.querySelector("#cart").addEventListener("click", displayCart);
 
 // }
 
-// //displays the dishes corresponding to the filters
-// function filter()
-// {
+//displays the dishes corresponding to the filters
+function filter(e)
+{
+    let filteredMenu = [];
 
-// }
+    document.querySelector("main").style.display = "none";
+    document.body.insertBefore(document.createElement("section"), document.querySelector("nav").nextSibling);
+    for (const dish of menu) {
+        // console.log(e.target.className)
+        if(dish.diet === e.target.className || dish.type === e.target.className)
+        {
+            // e.target.classList stores the filter value
+            filteredMenu.push(dish);
+            console.log("bonjour")
+    
+        }
+    }
+        console.log(filteredMenu)
+        displayMenu(filteredMenu, "section");
+}
 
 
 
@@ -246,8 +271,9 @@ document.querySelector("#cart").addEventListener("click", displayCart);
 // //display the filtering blocks and the search bar when clicking on "filter"
 function displayFilters(e)
 {
-    if(!(document.querySelector("input")))
+    if(!isFilterDisplayed)
     {
+        isFilterDisplayed = 1;
         filterDiv = document.querySelector("#filterDiv");
         dynamicDiv = document.createElement("div");
         filterDiv.appendChild(dynamicDiv);
@@ -256,15 +282,17 @@ function displayFilters(e)
         let filter2 = document.createElement("p");
         let searchBar = document.createElement("input");
         searchBar.type = "text";
-        searchBar.placeholder = "Search...";
+        searchBar.placeholder = "Search meal name";
         dynamicDiv.appendChild(searchBar);
         dynamicDiv.appendChild(filter1);
         dynamicDiv.appendChild(filter2);
-        filter1.setAttribute("class", "healthy");
-        filter2.setAttribute("class", "french");
+        filter1.setAttribute("class", "Comfort");
+        filter2.setAttribute("class", "Vegetarian");
+        filter1.innerHTML = "Comfort";
+        filter2.innerHTML = "Vegetarian";
         filter1.addEventListener("click", filter);
         filter2.addEventListener("click", filter);
-        searchBar.addEventListener("keyup", searchMeal);
+        // searchBar.addEventListener("keyup", searchMeal);
     }
 }
 
