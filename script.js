@@ -221,9 +221,10 @@ function displayCart()
     console.log("OSUDBVOZEVOUVZ")
     console.log(cartContent[0])
     console.log(document.querySelector("main").style.display !== "none")
-    if((document.querySelector("main").style.display !== "none" || ) && cartContent[0])
+    if((document.querySelector("main").style.display !== "none" || document.querySelector(".filteredSection")) && cartContent[0])
     {
         document.querySelector("main").style.display = "none";
+        document.querySelector(".filteredSection").remove();
         document.body.insertBefore(document.createElement("section"), document.querySelector("nav").nextSibling);
         displayMenu(Choices(), "section");
         //still need to display price
@@ -242,9 +243,11 @@ document.querySelector("#cart").addEventListener("click", displayCart);
 function filter(e)
 {
     let filteredMenu = [];
-
+    let section = document.createElement("section");
     document.querySelector("main").style.display = "none";
-    document.body.insertBefore(document.createElement("section"), document.querySelector("nav").nextSibling);
+    document.body.insertBefore(section, document.querySelector("nav").nextSibling);
+    section.setAttribute("class", "filteredSection");
+
     for (const dish of menu) {
         // console.log(e.target.className)
         if(dish.diet === e.target.className || dish.type === e.target.className)
