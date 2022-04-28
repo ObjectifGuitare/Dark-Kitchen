@@ -3,7 +3,7 @@ const menu = [
         img: 'images/loadedNachos.jpg',
         plate: 'Loaded Nachos',
         ingredients: ['nachos','guacamole', 'salsa', 'cheese'],
-        drink: 'beer',
+        drink: 'Beer',
         type: 'Chicken-meal',
         price:17.50,
         diet: 'Fast-food',
