@@ -5,14 +5,11 @@
     box-sizing: border-box;
 }
 
-<<<<<<< HEAD
 body {
     font-family: cursive;
     /* background: linear-gradient(#e66465, #9198e5); */
 }
 
-=======
->>>>>>> Jamie
 a {
     text-decoration: none;
 }
@@ -118,6 +115,7 @@ figure {
     transition: all .5s cubic-bezier(0.075, 0.82, 0.165, 1);
     max-width: 50%;
     border-radius: 5px;
+    margin-left: 50px;
 }
 
 img {
@@ -126,8 +124,7 @@ img {
 
 p .add-to-cart {
     display: block;
-    width: 100px;
     margin-left: auto;
     margin-right: auto;
-    text-align: right;
+    text-align: center;
 }
