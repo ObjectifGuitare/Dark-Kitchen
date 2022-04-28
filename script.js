@@ -227,8 +227,6 @@ function Choices()
 function displayCart()
 {
     if((document.querySelector("main").style.display !== "none" || document.querySelector(".filteredSection")) && cartContent[0])
-
-      
     {
         document.querySelector("main").style.display = "none";
         if (document.querySelector(".filteredSection"))
@@ -298,3 +296,22 @@ function displayFilters(e)
 }
 
 document.querySelector("#filterSpan").addEventListener("click", displayFilters);
+
+
+
+//both of these events make the switch between cart and main menu possible
+document.querySelector(".logo").addEventListener("click", function(e){
+    if (document.querySelector("section"))
+    {
+        document.querySelector("section").remove();
+        document.querySelector("main").style.display = "flex";
+    }
+})
+
+document.querySelector(".home").addEventListener("click", function(e){
+    if (document.querySelector("section"))
+    {
+        document.querySelector("section").remove();
+        document.querySelector("main").style.display = "flex";
+    }
+})
