@@ -35,6 +35,7 @@ li {
 /* LOGO */
 .logo {
     font-size: 32px;
+    cursor: pointer;
 }
 
 /* NAVBAR MENU */
