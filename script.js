@@ -161,6 +161,8 @@ function displayMenu(arr, tag){
         figure.appendChild(diet)
         figure.appendChild(list)
 
+
+
         //adding a "add to cart" button
         let addButton = document.createElement("div");
         addButton.innerHTML = "Add to Cart";
@@ -182,6 +184,8 @@ function darkMode(e)
         document.body.style.color = "white";
         isDark = 1;
         e.target.innerText = "Dark mode";
+        e.target.style.backgroundColor = "black";
+        e.target.style.color = "white";
         // document.body.style.filter = 'invert(1)'
     }
     else {
@@ -189,6 +193,8 @@ function darkMode(e)
         document.body.style.color = "black";
         isDark = 0;
         e.target.innerText = "Light mode";
+        e.target.style.backgroundColor = "white";
+        e.target.style.color = "black";
         // document.body.style.filter = 'invert(0)'
     }
 }
@@ -262,15 +268,6 @@ function filter(e)
         console.log(filteredMenu)
         displayMenu(filteredMenu, "section");
 }
-
-
-
-
-   
-
-
-
-
 
 // //display the filtering blocks and the search bar when clicking on "filter"
 function displayFilters(e)
