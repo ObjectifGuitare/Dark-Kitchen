@@ -132,6 +132,10 @@ img {
     max-width: 100%;
 }
 
+figure>h2, figure>h3 {
+    text-align: center;
+}
+
 p .add-to-cart {
     display: block;
     width: 100px;
