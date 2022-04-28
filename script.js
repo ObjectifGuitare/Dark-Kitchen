@@ -125,7 +125,7 @@ const menu = [
 ]
 
 //displays the given array in the given section
-function displayMenu(arr, tag){
+function displayMenu(arr, tag, isCart){
     // let menuIndex = 0;
     for (const meal of arr) {
 
@@ -164,18 +164,44 @@ function displayMenu(arr, tag){
 
 
         //adding a "add to cart" button
-        let addButton = document.createElement("div");
-        addButton.innerHTML = `Add ${meal.diet} meal to your cart`;
-        figure.appendChild(addButton);
-        addButton.setAttribute("class", "AddToCart");
-        addButton.classList.add(meal.index);
-        addButton.addEventListener("click", addToCart);
-        //     span.className = 'glyphicon glyphicon-shopping-cart' ------- add to cart image
-        // menuIndex++;
+        if (!isCart){
+            let addButton = document.createElement("div");
+            addButton.innerHTML = `Add ${meal.diet} meal to your cart`;
+            figure.appendChild(addButton);
+            addButton.setAttribute("class", "AddToCart");
+            addButton.classList.add(meal.index);
+            addButton.addEventListener("click", addToCart);
+        }
+        else{
+            let rmvButton = document.createElement("div");
+            rmvButton.innerHTML = "Remove from cart";
+            figure.appendChild(rmvButton);
+            rmvButton.setAttribute("class", "RmvFromCart");
+            rmvButton.classList.add(meal.price);
+            rmvButton.classList.add(meal.index);
+            rmvButton.addEventListener("click", RmvFromCart); 
+        }
     }
 }
-displayMenu(menu, "#card-container");
+displayMenu(menu, "main", 0);
 
+
+
+function RmvFromCart(e)
+{
+    let toBeRmvPrice = e.target.classList[1];
+    e.target.parentElement.remove();
+    let cartCount = document.querySelector(".cartCount")
+    cartCount.innerHTML = Number(cartCount.innerHTML) - 1;
+    let priceTag = document.querySelector(".modalPrice");
+    priceTag.innerHTML = Number(priceTag.innerHTML) - toBeRmvPrice;
+    if(Number(priceTag.innerHTML) == 0)
+    {
+        priceTag.innerHTML = "RIEN DU TOUT DONC AJOUTE DANS TON PANIER FIEU"
+        document.querySelector(".euro").remove();
+    }
+    cartContent = cartContent.filter(machin => machin != e.target.classList[2]);
+}
 
 function darkMode(e)
 {
@@ -223,6 +249,15 @@ function Choices()
     return choices;
 }
 
+function paySum(arr)
+{
+    let sum = 0;
+    for (const machin of arr) {
+        sum += machin.price;
+    }
+    return sum;
+}
+
 //shows a new page without loading a new one with cart content when clicking on the cart icon
 function displayCart()
 {
@@ -232,8 +267,23 @@ function displayCart()
         if (document.querySelector(".filteredSection"))
             document.querySelector(".filteredSection").remove();
         document.body.insertBefore(document.createElement("section"), document.querySelector("nav").nextSibling);
-        displayMenu(Choices(), "section");
+        let payPLEASE = Choices(); 
+        displayMenu(payPLEASE, "section", 1);
+
         //still need to display price
+        let price = document.createElement("div")
+        let PriceTag = document.createElement("span");
+        let euro = document.createElement("span");
+        euro.classList.add("euro")
+        PriceTag.classList.add("modalPrice")
+        price.classList.add("price")
+        document.body.querySelector("section").appendChild(price);
+        price.innerHTML = `Faut payer `;
+        price.appendChild(PriceTag);
+        price.appendChild(euro);
+        PriceTag.innerHTML = `${paySum(payPLEASE)}`;
+        euro.innerHTML = "€";
+
     }
 }
 document.querySelector("#cart").addEventListener("click", displayCart);
@@ -264,7 +314,7 @@ function filter(e)
         }
     }
         console.log(filteredMenu)
-        displayMenu(filteredMenu, "section");
+        displayMenu(filteredMenu, "section", 0);
 }
 
 // //display the filtering blocks and the search bar when clicking on "filter"
