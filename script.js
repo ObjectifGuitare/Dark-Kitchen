@@ -6,7 +6,7 @@ const menu = [
         img: 'images/loadedNachos.jpg',
         plate: 'Loaded Nachos',
         ingredients: ['nachos','guacamole', 'salsa', 'cheese'],
-        drink: 'beer',
+        drink: 'Beer',
         type: 'Chicken-meal',
         price:17.50,
         index: 0,
@@ -234,7 +234,6 @@ document.querySelector("#cart").addEventListener("click", displayCart);
 // //display the different dishes that correspond to the research when searching with search bar
 // function searchMeal()
 // {
-
 // }
 
 //displays the dishes corresponding to the filters
