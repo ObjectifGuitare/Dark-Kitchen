@@ -218,13 +218,11 @@ function Choices()
 //shows a new page without loading a new one with cart content when clicking on the cart icon
 function displayCart()
 {
-    console.log("OSUDBVOZEVOUVZ")
-    console.log(cartContent[0])
-    console.log(document.querySelector("main").style.display !== "none")
     if((document.querySelector("main").style.display !== "none" || document.querySelector(".filteredSection")) && cartContent[0])
     {
         document.querySelector("main").style.display = "none";
-        document.querySelector(".filteredSection").remove();
+        if (document.querySelector(".filteredSection"))
+            document.querySelector(".filteredSection").remove();
         document.body.insertBefore(document.createElement("section"), document.querySelector("nav").nextSibling);
         displayMenu(Choices(), "section");
         //still need to display price
