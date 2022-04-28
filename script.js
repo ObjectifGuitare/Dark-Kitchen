@@ -142,10 +142,10 @@ function displayMenu(arr, tag){
     /* Connecting the correct content to the correct constant */
         image.src = meal.img
         plate.innerHTML = meal.plate
-        drink.innerHTML = meal.drink
-        type.innerHTML = meal.type
+        drink.innerHTML = `This meal pairs well with ${meal.drink}`
+        type.innerHTML = `Dietary content: ${meal.type}`
         price.innerHTML = `${meal.price}€`
-        diet.innerHTML = meal.diet
+        diet.innerHTML = `Add ${meal.diet} meal to cart`
 
         for (let item of meal.ingredients) {
             let food = document.createElement('li');
@@ -156,14 +156,16 @@ function displayMenu(arr, tag){
         document.querySelector(tag).appendChild(figure)
         figure.appendChild(image)
         figure.appendChild(plate)
+        figure.appendChild(type)
         figure.appendChild(drink)
         figure.appendChild(price)
-        figure.appendChild(diet)
         figure.appendChild(list)
+
+
 
         //adding a "add to cart" button
         let addButton = document.createElement("div");
-        addButton.innerHTML = "Add to Cart";
+        addButton.innerHTML = `Add ${meal.diet} meal to your cart`;
         figure.appendChild(addButton);
         addButton.setAttribute("class", "AddToCart");
         addButton.classList.add(meal.index);
@@ -172,7 +174,7 @@ function displayMenu(arr, tag){
         // menuIndex++;
     }
 }
-displayMenu(menu, "main");
+displayMenu(menu, "#card-container");
 
 
 function darkMode(e)
@@ -182,6 +184,8 @@ function darkMode(e)
         document.body.style.color = "white";
         isDark = 1;
         e.target.innerText = "Dark mode";
+        e.target.style.backgroundColor = "black";
+        e.target.style.color = "white";
         // document.body.style.filter = 'invert(1)'
     }
     else {
@@ -189,6 +193,8 @@ function darkMode(e)
         document.body.style.color = "black";
         isDark = 0;
         e.target.innerText = "Light mode";
+        e.target.style.backgroundColor = "white";
+        e.target.style.color = "black";
         // document.body.style.filter = 'invert(0)'
     }
 }
@@ -221,8 +227,6 @@ function Choices()
 function displayCart()
 {
     if((document.querySelector("main").style.display !== "none" || document.querySelector(".filteredSection")) && cartContent[0])
-
-      
     {
         document.querySelector("main").style.display = "none";
         if (document.querySelector(".filteredSection"))
@@ -263,15 +267,6 @@ function filter(e)
         displayMenu(filteredMenu, "section");
 }
 
-
-
-
-   
-
-
-
-
-
 // //display the filtering blocks and the search bar when clicking on "filter"
 function displayFilters(e)
 {
@@ -301,3 +296,22 @@ function displayFilters(e)
 }
 
 document.querySelector("#filterSpan").addEventListener("click", displayFilters);
+
+
+
+//both of these events make the switch between cart and main menu possible
+document.querySelector(".logo").addEventListener("click", function(e){
+    if (document.querySelector("section"))
+    {
+        document.querySelector("section").remove();
+        document.querySelector("main").style.display = "flex";
+    }
+})
+
+document.querySelector(".home").addEventListener("click", function(e){
+    if (document.querySelector("section"))
+    {
+        document.querySelector("section").remove();
+        document.querySelector("main").style.display = "flex";
+    }
+})
