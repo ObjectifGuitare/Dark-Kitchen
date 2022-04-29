@@ -37,7 +37,7 @@ li {
 }
 
 .nav-links a {
-    color: #fff;
+    color: #B6DADA;
 }
 
 /* LOGO */
@@ -54,8 +54,9 @@ li {
 }
 
 .menu li:hover {
-    background-color: #4c9e9e;
-    border-radius: 5px;
+    display: inline-block;
+    color: #B6DADA;
+    background-color: #008080;
     transition: 0.3s ease;
 }
 
@@ -65,21 +66,21 @@ li {
 
 /*SHOPPING CART LOGO*/
 img#cart {
-    height:auto;
-    width:70px;
-    border-radius:0%;
-    padding: 10px;
+    height: auto;
+    width: 50px;
+    border-radius: 0%;
+    padding: 5px;
 }
 
 /*CHIFFRE SHOPPING CART*/
 .cartCount {
     position: absolute;
-    top: 19px;
+    top: 15px;
     width: 6px;
     height: 4px;
-    z-index: 1;
+    z-index: 3;
     font-size: 18px;
-    margin-left: 10px;
+    margin-left: 5px;
     color: rgb(252, 252, 6);
     border:0;
 }
@@ -107,11 +108,12 @@ input[type=checkbox] {
         left: 0;
         text-align: center;
         padding: 16px 0;
+        margin-top: 35px;
     }
 
     .menu li:hover {
         display: inline-block;
-        background-color: #4c9e9e;
+        background-color: #239C7B;
         transition: 0.3s ease;
     }
 
@@ -119,27 +121,40 @@ input[type=checkbox] {
         margin-top: 12px;
     }
 
+    img#cart {
+        height: auto;
+        width: 50px;
+        border-radius: 0%;
+        padding: 10px;
+    }
+
+    .cartCount {
+        position: absolute;
+        top: 240px;
+        width: 60px;
+        height: 4px;
+        z-index: 1;
+        font-size: 18px;
+        right: 0;
+        left: 280px;
+        color: rgb(252, 252, 6);
+        border: 0;
+    }
+
+
     input[type=checkbox]:checked~.menu {
         display: block;
     }
 
     .hamburger {
         display: block;
+        position: absolute;
+        right: 0;
+        top: 0;
     }
 }
 .mode {
     cursor: pointer;
-}
-
-div#filterDiv {
-    width: 50%;
-    text-align: center;
-    text-decoration: double;
-    padding: 10px;
-    font-family: 'Baloo 2', cursive;
-    border-radius:25px;
-    background-color:#008080;
-    margin: 10px auto;
 }
 
 div#card-container {
@@ -149,20 +164,42 @@ div#card-container {
     align-items: center;
 }
 
+main {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+div#filterDiv {
+    width: 50%;
+    text-align: center;
+    text-decoration: double;
+    padding: 10px;
+    font-family: 'Baloo 2', cursive;
+    border-radius: 25px;
+    background-color: #008080;
+    margin: 20px auto;
+}
+
 figure {
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
-    background-color:#239C7B;
-    color:	#B6DADA;
+    background-color: #239C7B;
+    color: #B6DADA;
     align-items: center;
     width: 30%;
-    height:25%;
+    height: 25%;
     padding: 10px;
     margin: 10px;
     border-radius: 25px;
     border: solid 5px #008080;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+figure>img {
+    align-items: first baseline;
 }
 
 h2 {
@@ -171,8 +208,8 @@ h2 {
     text-decoration: double;
     padding: 10px;
     font-family: 'Baloo 2', cursive;
-    border-radius:25px;
-    background-color:#008080;
+    border-radius: 25px;
+    background-color: #008080;
 }
 
 div.price {
@@ -196,9 +233,9 @@ section {
 h3, p {
     font-size: smaller;
     font-family: 'Baloo 2', cursive;
-    width:45%;
-    border:solid 4px #008080;
-    border-radius:25px;
+    width: 45%;
+    border: solid 4px #008080;
+    border-radius: 25px;
     padding: 10px;
     text-align: center;
     margin: 5px;
@@ -252,18 +289,18 @@ h4 {
 }
 
 .AddToCart {
-    font-weight:900;
-    color:#008080;
+    font-weight: 900;
+    color: #008080;
     background-color: #B6DADA;
     padding: 10px;
     border-radius: 5px;
-    text-align:center;
-    width:90%;
-    margin:10px;
+    text-align: center;
+    width: 90%;
+    margin: 10px;
 }
 
 .AddToCart:hover {
-    color:#B6DADA;
+    color: #B6DADA;
     background-color: #008080;
 }
 
@@ -285,8 +322,8 @@ ul {
 li {
     font-size: smaller;
     padding: 10px;
-    background-color:#008080;
-    border-radius:25px;
+    background-color: #008080;
+    border-radius: 25px;
     margin: 5px;
     font-family: 'Baloo 2', cursive;
     
