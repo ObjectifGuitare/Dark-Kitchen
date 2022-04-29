@@ -205,11 +205,11 @@ function RmvFromCart(e)
 
 function darkMode(e)
 {
-    if(!isDark){
+    if(!isDark) {
         document.body.style.backgroundColor = "black";
         document.body.style.color = "#B6DADA";
         isDark = 1;
-        e.target.innerText = "Dark";
+        e.target.innerText = "Dark mode";
         e.target.style.backgroundColor = "#B6DADA";
         e.target.style.color = "#008080";
         // document.body.style.filter = 'invert(1)'
@@ -218,7 +218,7 @@ function darkMode(e)
         document.body.style.backgroundColor = "#008080";
         document.body.style.color = "#B6DADA";
         isDark = 0;
-        e.target.innerText = "Light";
+        e.target.innerText = "Light mode";
         e.target.style.backgroundColor = "#008080";
         e.target.style.color = "#B6DADA";
         // document.body.style.filter = 'invert(0)'

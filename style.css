@@ -1,34 +1,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@700&display=swap');
 
-/* 
+/*  COLOR PALETTE
+
 Dark Green --> #008080;
 Light Green --> #B6DADA;
-Green --> #239C7B; */
+Green --> #239C7B; 
 
+*/
 
-/* UTILITIES */
-
-
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: cursive;
-
-}
-
+/* removing underline on all links */
 a {
     text-decoration: none;
 }
-
+/* removing dot before list elements */
 li {
     list-style: none;
 }
-
 /* NAVBAR STYLING STARTS */
 .navbar {
     display: flex;
@@ -37,23 +24,18 @@ li {
     padding: 20px;
     background-color: #008080;
     color: #fff;
+    border:solid 4px #239C7B;
 }
-
+/* All the link elements in .nav-links class elements */
 .nav-links a {
     color: #B6DADA;
 }
-
-/* LOGO */
-.logo {
-    font-size: 32px;
-    cursor: pointer;
-}
-
 /* NAVBAR MENU */
 .menu {
     display: flex;
-    gap: 1em;
-    font-size: 25px;
+    font-size: x-large;
+    flex-flow: row;
+    justify-content: space-between;
 }
 
 .menu li:hover {
@@ -67,6 +49,7 @@ li {
 
 /*SHOPPING CART LOGO*/
 img#cart {
+    transform: scale(1.3);
     height: auto;
     width: 50px;
     border-radius: 0%;
@@ -76,12 +59,12 @@ img#cart {
 /*CHIFFRE SHOPPING CART*/
 .cartCount {
     position: absolute;
-    top: 20px;
+    top: 45px;
     width: 6px;
     height: 4px;
     z-index: 3;
-    font-size: 25px;
-    margin-left: 3px;
+    font-size: 30px;
+    margin-left: 1px;
     color: rgb(252, 252, 6);
     border:0;
 }
@@ -177,6 +160,7 @@ input[type=checkbox] {
     background: #008080;
     display: flex;
     gap: 1em;
+    border: none;
     font-size: 25px;
 }
 
@@ -219,6 +203,11 @@ figure {
     border-radius: 25px;
     border: solid 5px #008080;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+figure:hover {
+    transition: 0.5s;
+    transform: scale(1.2);
 }
 
 figure>img {
@@ -411,6 +400,13 @@ img {
     width: 100%;
     height: 200px;
     border-radius: 25px;
+}
+
+img#logo {
+    border-radius: 100%;
+    border: solid 5px #B6DADA;
+    width:150px;
+    height:150px;
 }
 
 figure>h2,
