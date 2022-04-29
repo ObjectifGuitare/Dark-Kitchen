@@ -84,7 +84,7 @@ const menu = [
     },
     {
         img: 'images/caeserSalad.jpg',
-        plate: 'Caeser Salard',
+        plate: 'Caeser Salad',
         ingredients: ['chicken','tomato', 'lettuce', 'croutons'],
         drink: 'White wine',
         type: 'Chicken-meal',
@@ -325,6 +325,7 @@ function displayFilters(e)
         isFilterDisplayed = 1;
         filterDiv = document.querySelector("#filterDiv");
         dynamicDiv = document.createElement("div");
+        dynamicDiv.setAttribute('id', 'clickables');
         filterDiv.appendChild(dynamicDiv);
 
         let filter1 = document.createElement("p");
@@ -333,6 +334,9 @@ function displayFilters(e)
         let filter4 = document.createElement('p');
         let filter5 = document.createElement('p');
         let filter6 = document.createElement('p');
+        let filter7 = document.createElement('p');
+        let filter8 = document.createElement('p');
+        let filter9 = document.createElement('p');
         let searchBar = document.createElement("input");
         searchBar.type = "text";
         searchBar.placeholder = "Search";
@@ -343,24 +347,32 @@ function displayFilters(e)
         dynamicDiv.appendChild(filter4);
         dynamicDiv.appendChild(filter5);
         dynamicDiv.appendChild(filter6);
+        dynamicDiv.appendChild(filter7);
+        dynamicDiv.appendChild(filter8);
         filter1.setAttribute("class", "Comfort");
         filter2.setAttribute("class", "Vegetarian");
         filter3.setAttribute('class', 'Fast-food');
         filter4.setAttribute('class', 'Luxury');
         filter5.setAttribute('class', 'Seafood');
-        filter6.setAttribute('class', 'Red-meat');
+        filter6.setAttribute('class', 'Red meat');
+        filter7.setAttribute('class', 'Healthy');
+        filter8.setAttribute('class', 'Chicken-meal');
         filter1.innerHTML = "Comfort";
         filter2.innerHTML = "Vegetarian";
         filter3.innerHTML = 'Fast-food';
         filter4.innerHTML = 'Luxury';
         filter5.innerHTML = 'Seafood';
-        filter6.innerHTML = 'Red-meat';
+        filter6.innerHTML = 'Red meat';
+        filter7.innerHTML = 'Healthy';
+        filter8.innerHTML = 'Chicken-meal';
         filter1.addEventListener("click", filter);
         filter2.addEventListener("click", filter);
         filter3.addEventListener('click', filter);
         filter4.addEventListener('click', filter);
         filter5.addEventListener('click', filter);
         filter6.addEventListener('click', filter);
+        filter7.addEventListener('click', filter);
+        filter8.addEventListener('click', filter);
         // searchBar.addEventListener("keyup", searchMeal);
     }
 }

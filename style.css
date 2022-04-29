@@ -7,6 +7,9 @@ Green --> #239C7B; */
 
 
 /* UTILITIES */
+
+
+
 * {
     margin: 0;
     padding: 0;
@@ -185,7 +188,7 @@ main {
 }
 
 div#filterDiv {
-    width: 50%;
+    width: 95%;
     text-align: center;
     text-decoration: double;
     padding: 10px;
@@ -243,7 +246,7 @@ section {
     align-items: center;
 }
 
-h3, p {
+h3 {
     font-size: smaller;
     font-family: 'Baloo 2', cursive;
     width: 45%;
@@ -252,6 +255,44 @@ h3, p {
     padding: 10px;
     text-align: center;
     margin: 5px;
+}
+
+div#clickables {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+}
+
+input {
+    width:100%;
+    margin: 10px 10px 10px 10px;
+}
+div#clickables > p {
+    font-size: x-small;
+    font-family: 'Baloo 2', cursive;
+    width: fit-content;
+    border: solid 4px #B6DADA;
+    border-radius: 25px;
+    padding: 10px;
+    text-align: center;
+    margin: 5px;
+}
+
+div#clickables > p:hover {
+    transition: 0.5s;
+    font-size: small;
+    font-family: 'Baloo 2', cursive;
+    width: fit-content;
+    border: solid 4px #B6DADA;
+    background-color: #B6DADA;
+    border-radius: 25px;
+    padding: 10px;
+    text-align: center;
+    margin: 5px;
+}
+
+div #clickables > p:active {
+    text-decoration: underline;
 }
 
 div.RmvFromCart {
