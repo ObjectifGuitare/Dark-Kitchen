@@ -54,9 +54,7 @@ li {
 }
 
 .menu li:hover {
-    display: inline-block;
-    color: #B6DADA;
-    background-color: #008080;
+    background-color: #239C7B;
     transition: 0.3s ease;
 }
 
@@ -136,7 +134,7 @@ input[type=checkbox] {
         z-index: 1;
         font-size: 18px;
         right: 0;
-        left: 280px;
+        left: 345px;
         color: rgb(252, 252, 6);
         border: 0;
     }
@@ -151,6 +149,21 @@ input[type=checkbox] {
         position: absolute;
         right: 0;
         top: 0;
+    }
+}
+
+@media (max-width: 400px){
+    .cartCount {
+        position: absolute;
+        top: 240px;
+        width: 60px;
+        height: 4px;
+        z-index: 1;
+        font-size: 18px;
+        right: 0;
+        left: 150px;
+        color: rgb(252, 252, 6);
+        border: 0;
     }
 }
 .mode {
