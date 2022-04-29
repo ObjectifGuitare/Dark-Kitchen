@@ -329,18 +329,38 @@ function displayFilters(e)
 
         let filter1 = document.createElement("p");
         let filter2 = document.createElement("p");
+        let filter3 = document.createElement('p');
+        let filter4 = document.createElement('p');
+        let filter5 = document.createElement('p');
+        let filter6 = document.createElement('p');
         let searchBar = document.createElement("input");
         searchBar.type = "text";
-        searchBar.placeholder = "Search meal name";
+        searchBar.placeholder = "Search";
         dynamicDiv.appendChild(searchBar);
         dynamicDiv.appendChild(filter1);
         dynamicDiv.appendChild(filter2);
+        dynamicDiv.appendChild(filter3);
+        dynamicDiv.appendChild(filter4);
+        dynamicDiv.appendChild(filter5);
+        dynamicDiv.appendChild(filter6);
         filter1.setAttribute("class", "Comfort");
         filter2.setAttribute("class", "Vegetarian");
+        filter3.setAttribute('class', 'Fast-food');
+        filter4.setAttribute('class', 'Luxury');
+        filter5.setAttribute('class', 'Seafood');
+        filter6.setAttribute('class', 'Red-meat');
         filter1.innerHTML = "Comfort";
         filter2.innerHTML = "Vegetarian";
+        filter3.innerHTML = 'Fast-food';
+        filter4.innerHTML = 'Luxury';
+        filter5.innerHTML = 'Seafood';
+        filter6.innerHTML = 'Red-meat';
         filter1.addEventListener("click", filter);
         filter2.addEventListener("click", filter);
+        filter3.addEventListener('click', filter);
+        filter4.addEventListener('click', filter);
+        filter5.addEventListener('click', filter);
+        filter6.addEventListener('click', filter);
         // searchBar.addEventListener("keyup", searchMeal);
     }
 }

@@ -1,6 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@700&display=swap');
 
 
+/* 
+Dark Green --> #008080;
+Light Green --> #B6DADA;
+Green --> #239C7B; */
+
+
 /* UTILITIES */
 * {
     margin: 0;
@@ -27,7 +33,7 @@ li {
     align-items: center;
     justify-content: space-between;
     padding: 20px;
-    background-color: teal;
+    background-color: #008080;
     color: #fff;
 }
 
@@ -76,6 +82,7 @@ img#cart {
     font-size: 18px;
     margin-left: 10px;
     color: rgb(252, 252, 6);
+    border: 0;
 }
 
 /*RESPONSIVE NAVBAR MENU STARTS*/
@@ -96,7 +103,7 @@ input[type=checkbox] {
     .menu {
         display: none;
         position: absolute;
-        background-color: teal;
+        background-color: #008080;
         right: 0;
         left: 0;
         text-align: center;
@@ -148,14 +155,16 @@ section {
     align-items: center;
 }
 div#filterDiv {
-    width: 50%;
+    display: flex;
+    width: 80%;
     text-align: center;
     text-decoration: double;
+    color: #B6DADA;
     padding: 10px;
     font-family: 'Baloo 2', cursive;
     border-radius:25px;
     background-color:#008080;
-    margin: 10px auto;
+    margin: 20px auto;
 }
 
 figure {
@@ -198,6 +207,7 @@ h3, p {
     padding: 10px;
     text-align: center;
     margin: 5px;
+
 }
 
 h4 {
@@ -233,6 +243,7 @@ ul {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
+    list-style: none;
 }
 
 li {
@@ -242,7 +253,6 @@ li {
     border-radius:25px;
     margin: 5px;
     font-family: 'Baloo 2', cursive;
-    
 }
 
 #cart {
@@ -262,31 +272,4 @@ img {
 
 figure>h2, figure>h3 {
     text-align: center;
-}
-
-.AddToCart {
-    display: block;
-    cursor: pointer;
-    background-color: #965675;
-    border: 1px solid;
-    margin-top: 5px;
-    padding: 10px;
-    text-align: center;
-}
-
-.AddToCart:hover, #filterDiv:hover {
-    background-color: grey;
-    color: #fff;
-}
-
-#filterDiv {
-    cursor: pointer;
-    background-color: #965675;
-    border: 1px solid;
-    padding: 10px;
-}
-
-.Comfort:hover, .Vegetarian:hover {
-    cursor: pointer;
-    background-color: black;
 }
