@@ -336,7 +336,6 @@ function displayFilters(e)
         let filter6 = document.createElement('p');
         let filter7 = document.createElement('p');
         let filter8 = document.createElement('p');
-        let filter9 = document.createElement('p');
         let searchBar = document.createElement("input");
         searchBar.type = "text";
         searchBar.placeholder = "Search";

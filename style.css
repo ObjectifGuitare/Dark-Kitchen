@@ -246,7 +246,7 @@ section {
     align-items: center;
 }
 
-h3 {
+h3, p {
     font-size: smaller;
     font-family: 'Baloo 2', cursive;
     width: 45%;
@@ -267,6 +267,7 @@ input {
     width:100%;
     margin: 10px 10px 10px 10px;
 }
+
 div#clickables > p {
     font-size: x-small;
     font-family: 'Baloo 2', cursive;
