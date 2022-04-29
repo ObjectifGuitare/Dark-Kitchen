@@ -53,7 +53,7 @@ li {
 .menu {
     display: flex;
     gap: 1em;
-    font-size: 18px;
+    font-size: 25px;
 }
 
 .menu li:hover {
@@ -62,7 +62,7 @@ li {
 }
 
 .menu li {
-    padding: 5px 14px;
+    padding: 20px
 }
 
 /*SHOPPING CART LOGO*/
@@ -76,12 +76,12 @@ img#cart {
 /*CHIFFRE SHOPPING CART*/
 .cartCount {
     position: absolute;
-    top: 15px;
+    top: 20px;
     width: 6px;
     height: 4px;
     z-index: 3;
-    font-size: 18px;
-    margin-left: 5px;
+    font-size: 25px;
+    margin-left: 3px;
     color: rgb(252, 252, 6);
     border:0;
 }
@@ -117,6 +117,7 @@ input[type=checkbox] {
         background-color: #239C7B;
         transition: 0.3s ease;
     }
+
 
     .menu li+li {
         margin-top: 12px;
@@ -169,8 +170,14 @@ input[type=checkbox] {
         border: 0;
     }
 }
+
 .mode {
     cursor: pointer;
+    font-family: 'Baloo 2', cursive;
+    background: #008080;
+    display: flex;
+    gap: 1em;
+    font-size: 25px;
 }
 
 div#card-container {
@@ -216,6 +223,17 @@ figure {
 
 figure>img {
     align-items: first baseline;
+}
+
+h1.logo {
+    font-size: 40px;
+    width: fit-content;
+    padding: 10px;
+    font-family: 'Baloo 2', cursive;
+    border-radius: 25px;
+    background-color:#B6DADA ;
+    color: #008080;
+
 }
 
 h2 {

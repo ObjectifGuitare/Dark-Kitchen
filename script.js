@@ -197,7 +197,7 @@ function RmvFromCart(e)
     priceTag.innerHTML = Number(priceTag.innerHTML) - toBeRmvPrice;
     if(Number(priceTag.innerHTML) == 0)
     {
-        priceTag.innerHTML = "0€ \n Your cart is empty, don't go hunry!"
+        priceTag.innerHTML = "0€ \n Your cart is empty, don't go hungry!"
         document.querySelector(".euro").remove();
     }
     cartContent = cartContent.filter(machin => machin != e.target.classList[2]);
@@ -207,20 +207,20 @@ function darkMode(e)
 {
     if(!isDark){
         document.body.style.backgroundColor = "black";
-        document.body.style.color = "white";
+        document.body.style.color = "#B6DADA";
         isDark = 1;
-        e.target.innerText = "Dark mode";
-        e.target.style.backgroundColor = "black";
-        e.target.style.color = "white";
+        e.target.innerText = "Dark";
+        e.target.style.backgroundColor = "#B6DADA";
+        e.target.style.color = "#008080";
         // document.body.style.filter = 'invert(1)'
     }
     else {
-        document.body.style.backgroundColor = "white";
-        document.body.style.color = "black";
+        document.body.style.backgroundColor = "#008080";
+        document.body.style.color = "#B6DADA";
         isDark = 0;
-        e.target.innerText = "Light mode";
-        e.target.style.backgroundColor = "white";
-        e.target.style.color = "black";
+        e.target.innerText = "Light";
+        e.target.style.backgroundColor = "#008080";
+        e.target.style.color = "#B6DADA";
         // document.body.style.filter = 'invert(0)'
     }
 }
