@@ -172,7 +172,7 @@ function displayMenu(arr, tag, isCart){
             addButton.classList.add(meal.index);
             addButton.addEventListener("click", addToCart);
         }
-        else{
+        else {
             let rmvButton = document.createElement("div");
             rmvButton.innerHTML = "Remove from cart";
             figure.appendChild(rmvButton);
@@ -183,7 +183,7 @@ function displayMenu(arr, tag, isCart){
         }
     }
 }
-displayMenu(menu, "main", 0);
+displayMenu(menu, "#card-container", 0);
 
 
 
@@ -197,7 +197,7 @@ function RmvFromCart(e)
     priceTag.innerHTML = Number(priceTag.innerHTML) - toBeRmvPrice;
     if(Number(priceTag.innerHTML) == 0)
     {
-        priceTag.innerHTML = "RIEN DU TOUT DONC AJOUTE DANS TON PANIER FIEU"
+        priceTag.innerHTML = "0€ \n Your cart is empty, don't go hunry!"
         document.querySelector(".euro").remove();
     }
     cartContent = cartContent.filter(machin => machin != e.target.classList[2]);
@@ -278,7 +278,7 @@ function displayCart()
         PriceTag.classList.add("modalPrice")
         price.classList.add("price")
         document.body.querySelector("section").appendChild(price);
-        price.innerHTML = `Faut payer `;
+        price.innerHTML = `Total: `;
         price.appendChild(PriceTag);
         price.appendChild(euro);
         PriceTag.innerHTML = `${paySum(payPLEASE)}`;
