@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@700&display=swap');
 
-
 /* 
 Dark Green --> #008080;
 Light Green --> #B6DADA;
@@ -83,7 +82,7 @@ img#cart {
     font-size: 18px;
     margin-left: 5px;
     color: rgb(252, 252, 6);
-    border: 0;
+    border:0;
 }
 
 /*RESPONSIVE NAVBAR MENU STARTS*/
@@ -154,7 +153,6 @@ input[type=checkbox] {
         top: 0;
     }
 }
-
 .mode {
     cursor: pointer;
 }
@@ -173,20 +171,10 @@ main {
     align-items: center;
 }
 
-
-section {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: center;
-    align-items: center;
-}
-
 div#filterDiv {
-    display: flex;
-    width: 80%;
+    width: 50%;
     text-align: center;
     text-decoration: double;
-    color: #B6DADA;
     padding: 10px;
     font-family: 'Baloo 2', cursive;
     border-radius: 25px;
@@ -214,7 +202,6 @@ figure>img {
     align-items: first baseline;
 }
 
-
 h2 {
     width: 100%;
     text-align: center;
@@ -225,13 +212,68 @@ h2 {
     background-color: #008080;
 }
 
-h3,
-p {
+div.price {
+    width: fit-content;
+    text-align: center;
+    padding: 25px;
+    font-family: 'Baloo 2', cursive;
+    border-radius:25px;
+    color:#B6DADA;
+    background-color:#008080;
+    margin: 50px auto;
+}
+
+section {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+h3, p {
     font-size: smaller;
     font-family: 'Baloo 2', cursive;
     width: 45%;
     border: solid 4px #008080;
     border-radius: 25px;
+    padding: 10px;
+    text-align: center;
+    margin: 5px;
+}
+
+div.RmvFromCart {
+    font-size: smaller;
+    font-family: 'Baloo 2', cursive;
+    width:45%;
+    border:solid 4px #008080;
+    border-radius:25px;
+    padding: 10px;
+    text-align: center;
+    margin: 5px;
+}
+
+div.RmvFromCart:hover {
+    font-size: smaller;
+    font-family: 'Baloo 2', cursive;
+    width:45%;
+    color: #008080;
+    border:solid 4px #008080;
+    background-color:#B6DADA;
+    border-radius:25px;
+    padding: 10px;
+    text-align: center;
+    margin: 5px;
+}
+
+div.RmvFromCart:active {
+    font-size: smaller;
+    text-decoration: underline;
+    font-family: 'Baloo 2', cursive;
+    width:45%;
+    color: #008080;
+    border:solid 4px #008080;
+    background-color:#B6DADA;
+    border-radius:25px;
     padding: 10px;
     text-align: center;
     margin: 5px;
@@ -266,12 +308,15 @@ h4 {
     text-decoration: underline;
 }
 
+#filterSpan {
+    color:#B6DADA;
+}
+
 ul {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
-    list-style: none;
 }
 
 li {
@@ -281,6 +326,7 @@ li {
     border-radius: 25px;
     margin: 5px;
     font-family: 'Baloo 2', cursive;
+    
 }
 
 #cart {
@@ -294,11 +340,14 @@ img {
     border-radius: 25px;
 }
 
-img {
-    max-width: 100%;
-}
-
 figure>h2,
 figure>h3 {
+    text-align: center;
+}
+
+p .add-to-cart {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
     text-align: center;
 }
