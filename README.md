@@ -1,18 +1,5 @@
 # Dark-Kitchen
 
-Welcome to our Dark Kitchen. Order anything you want from the menu, watch your total amount due go up and down depending on what you add and remove from your cart.
+A BeCode group project. The goal was to display a collection of objects in pure javascript, but we also added some shopping cart mechanics. The real challenge here was the team play side of things
 
-## Types of Meal
-
-1. Comfort
-2. Luxury
-3. Fast-Food
-4. Healthy
-
-## Dietary Restrictions
-
-1. Seafood
-2. Chicken-meal
-3. Red meat
-4. Vegetarian
-
+Here is the github page : https://objectifguitare.github.io/Dark-Kitchen/
